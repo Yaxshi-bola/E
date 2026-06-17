@@ -1,0 +1,2003 @@
+```html
+<!DOCTYPE html>
+<html lang="uz" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O'zbek Tili va Hujjatchilik — Interaktiv Test Platformasi</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 50%, #cbd5e1 100%);
+        }
+        .dark body {
+            background: linear-gradient(135deg, #090d16 0%, #0f172a 50%, #030712 100%);
+        }
+        /* Custom scrollbar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(148, 163, 184, 0.3);
+            border-radius: 20px;
+        }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(71, 85, 105, 0.5);
+        }
+        
+        /* Premium Watermark matching standard metadata */
+        .watermark-bg {
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='250' height='250' viewBox='0 0 250 250'><text fill='rgba(100, 116, 139, 0.02)' font-size='10' font-family='sans-serif' x='20' y='120' transform='rotate(-30 20 120)'>@yomonboIa | @yovvoyiroq</text></svg>");
+        }
+        .dark .watermark-bg {
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='250' height='250' viewBox='0 0 250 250'><text fill='rgba(255, 255, 255, 0.015)' font-size='10' font-family='sans-serif' x='20' y='120' transform='rotate(-30 20 120)'>@yomonboIa | @yovvoyiroq</text></svg>");
+        }
+
+        /* Glassmorphism Styles */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 10px 40px -10px rgba(15, 23, 42, 0.04);
+        }
+        .dark .glass-panel {
+            background: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.4);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        /* Shining Glass Effect Keyframes */
+        @keyframes sweep {
+            0% { left: -150%; }
+            50% { left: 150%; }
+            100% { left: 150%; }
+        }
+        .shining-glass {
+            position: relative;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.75);
+            box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.04);
+        }
+        .dark .shining-glass {
+            background: rgba(15, 23, 42, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.3);
+        }
+        .shining-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.75) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: skewX(-25deg);
+            animation: sweep 3.5s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="min-h-full flex flex-col watermark-bg transition-colors duration-500 overflow-x-hidden text-slate-800">
+
+    <!-- TOP HEADER NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-white/40 dark:bg-slate-950/30 backdrop-blur-md border-b border-white/50 dark:border-slate-900/40 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+            
+            <!-- Logo & Brand Name -->
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-white/75 dark:bg-slate-900/50 rounded-2xl flex items-center justify-center border border-white/60 dark:border-slate-800 text-slate-700 dark:text-slate-300 shadow-sm">
+                    <i class="fa-solid fa-pen-nib text-lg text-indigo-500 animate-pulse"></i>
+                </div>
+                <div>
+                    <h1 class="text-xs sm:text-sm md:text-base font-black tracking-tight text-slate-800 dark:text-white leading-tight">O'zbek Tili va Hujjatchilik</h1>
+                    <p class="text-[9px] sm:text-[10px] font-bold text-slate-500 dark:text-slate-400">Interaktiv Test va Ish Yuritish Laboratoriyasi</p>
+                </div>
+            </div>
+
+            <!-- Premium Navigation Actions -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <!-- Glowing Telegram Channel Link button with Shining Glass Effect -->
+                <a href="https://t.me/yovvoyiroq" target="_blank" class="shining-glass inline-flex items-center gap-1.5 px-3 py-2 text-slate-800 dark:text-white rounded-2xl text-[10px] sm:text-xs font-extrabold transition-all duration-200 active:scale-95">
+                    <i class="fa-brands fa-telegram text-sm text-sky-500"></i>
+                    <span>Kanal: <span class="text-indigo-600 dark:text-indigo-400">@yovvoyiroq</span></span>
+                </a>
+
+                <!-- Theme Toggle -->
+                <button id="themeToggleBtn" onclick="toggleTheme()" class="w-9 h-9 flex items-center justify-center bg-white/50 dark:bg-slate-900/40 border border-white/40 dark:border-slate-800/40 hover:bg-white/70 dark:hover:bg-slate-800/60 rounded-2xl text-slate-600 dark:text-slate-300 transition-all duration-200 active:scale-90">
+                    <i id="themeIcon" class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- FLOATING CORNER CONTACT BADGE -->
+    <div class="fixed bottom-4 right-4 z-50 opacity-80 hover:opacity-100 transition-all duration-200">
+        <a href="https://t.me/yomonboIa" target="_blank" class="glass-panel px-4 py-2.5 rounded-full text-[11px] font-extrabold text-slate-700 dark:text-slate-300 flex items-center gap-2 shadow-lg border border-white/45 hover:scale-105 transition-all">
+            <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
+            <span>Aloqa: @yomonboIa</span>
+        </a>
+    </div>
+
+    <!-- MAIN APP WRAPPER -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col lg:flex-row gap-6 relative">
+
+        <!-- LEFT SIDEBAR -->
+        <section class="w-full lg:w-80 flex flex-col gap-5 shrink-0">
+            
+            <!-- PROGRESS & STATISTICS -->
+            <div class="glass-panel rounded-3xl p-5 transition-all duration-300">
+                <h2 class="text-[10px] font-black uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-3.5 flex items-center justify-between">
+                    <span>O'zlashtirish tahlili</span>
+                    <i class="fa-solid fa-chart-line text-slate-400"></i>
+                </h2>
+                
+                <div class="grid grid-cols-2 gap-3 mb-4">
+                    <div class="bg-emerald-500/5 dark:bg-emerald-500/10 p-3 rounded-2xl border border-emerald-500/10 dark:border-emerald-500/20 text-center">
+                        <p class="text-[9px] text-emerald-600 dark:text-emerald-400 font-extrabold uppercase">To'g'ri</p>
+                        <p id="correctCountText" class="text-xl font-black text-emerald-600 dark:text-emerald-400">0</p>
+                    </div>
+                    <div class="bg-rose-500/5 dark:bg-rose-500/10 p-3 rounded-2xl border border-rose-500/10 dark:border-rose-500/20 text-center">
+                        <p class="text-[9px] text-rose-600 dark:text-rose-400 font-extrabold uppercase">Xato</p>
+                        <p id="wrongCountText" class="text-xl font-black text-rose-600 dark:text-rose-400">0</p>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div>
+                    <div class="flex justify-between text-xs font-extrabold text-slate-600 dark:text-slate-300 mb-1.5">
+                        <span>O'zlashtirish darajasi:</span>
+                        <span id="progressBarPercentage" class="font-black text-indigo-600 dark:text-indigo-400">0%</span>
+                    </div>
+                    <div class="w-full h-2.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden border border-white/40">
+                        <div id="progressBarFill" class="h-full bg-slate-700 dark:bg-slate-200 rounded-full transition-all duration-500" style="width: 0%"></div>
+                    </div>
+                    <div class="flex justify-between text-[10px] text-slate-500 dark:text-slate-400 font-bold mt-2.5">
+                        <span id="answeredRatioText">Bajarildi: 0 / 100</span>
+                        <span id="bookmarkCountText">Saqlanganlar: 0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTROLS & CONFIGURATION -->
+            <div class="glass-panel rounded-3xl p-5 transition-all duration-300 flex flex-col gap-4">
+                <h2 class="text-[10px] font-black uppercase tracking-widest text-slate-500 dark:text-slate-400 flex items-center justify-between">
+                    <span>Sozlamalar</span>
+                    <i class="fa-solid fa-sliders text-slate-400"></i>
+                </h2>
+
+                <!-- Mode Switcher -->
+                <div class="flex bg-slate-200/50 dark:bg-slate-900/50 p-1 rounded-2xl border border-white/20 dark:border-slate-850">
+                    <button id="modeStudyBtn" onclick="changeQuizMode('study')" class="flex-1 py-2 text-xs font-black rounded-xl transition-all duration-300 bg-white dark:bg-slate-800 text-slate-800 dark:text-white shadow-[0_2px_8px_rgba(0,0,0,0.05)]">
+                        O'rganish
+                    </button>
+                    <button id="modeExamBtn" onclick="changeQuizMode('exam')" class="flex-1 py-2 text-xs font-bold rounded-xl transition-all duration-300 text-slate-500 dark:text-slate-400">
+                        Imtihon
+                    </button>
+                </div>
+
+                <!-- Exam Timer -->
+                <div id="examTimerContainer" class="hidden">
+                    <div class="bg-rose-500/10 dark:bg-rose-500/15 border border-rose-500/20 rounded-2xl p-3 flex items-center justify-between text-rose-700 dark:text-rose-400">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-hourglass-half animate-spin text-xs"></i>
+                            <span class="text-xs font-black uppercase">Qolgan vaqt:</span>
+                        </div>
+                        <span id="examTimerText" class="font-mono text-sm font-black">60:00</span>
+                    </div>
+                </div>
+
+                <!-- Category Filter -->
+                <div>
+                    <label class="block text-[9px] font-black uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">Mavzular filtri:</label>
+                    <select id="categoryFilter" onchange="filterQuestions()" class="w-full bg-white/50 dark:bg-slate-900/40 border border-white/35 dark:border-slate-800/40 rounded-xl p-2.5 text-xs font-extrabold focus:outline-none focus:ring-1 focus:ring-indigo-400 text-slate-700 dark:text-slate-300">
+                        <option value="all">Barcha mavzular (100 ta savol)</option>
+                        <option value="imlo">Orfografiya va Imlo</option>
+                        <option value="hujjat">Rasmiy ish yuritish va Hujjatlar</option>
+                        <option value="uslub">Vazifaviy uslublar</option>
+                        <option value="bookmarked">Saralangan savollar (★)</option>
+                    </select>
+                </div>
+
+                <!-- Search Input -->
+                <div>
+                    <label class="block text-[9px] font-black uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">Savollardan izlash:</label>
+                    <div class="relative">
+                        <input id="searchInput" oninput="filterQuestions()" type="text" placeholder="Kalit so'zni yozing..." class="w-full bg-white/50 dark:bg-slate-900/40 border border-white/35 dark:border-slate-800/40 rounded-xl pl-9 pr-4 py-2.5 text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-indigo-400 text-slate-700 dark:text-slate-300">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-[11px] text-slate-400"></i>
+                    </div>
+                </div>
+
+                <!-- Reset and Shuffle Controls -->
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="shuffleCurrentQuestions()" class="p-2.5 bg-white/40 hover:bg-white/70 dark:bg-slate-900/30 dark:hover:bg-slate-800/40 border border-white/30 dark:border-slate-800 text-slate-700 dark:text-slate-300 font-extrabold text-xs rounded-xl flex items-center justify-center gap-1.5 transition-all">
+                        <i class="fa-solid fa-shuffle text-[10px]"></i>
+                        Aralashtirish
+                    </button>
+                    <button onclick="resetQuizState()" class="p-2.5 bg-rose-500/10 hover:bg-rose-500/20 text-rose-600 dark:text-rose-400 border border-rose-500/20 font-extrabold text-xs rounded-xl flex items-center justify-center gap-1.5 transition-all">
+                        <i class="fa-solid fa-arrow-rotate-left text-[10px]"></i>
+                        Tozalash
+                    </button>
+                </div>
+            </div>
+
+            <!-- QUESTIONS NAVIGATION MAP -->
+            <div class="glass-panel rounded-3xl p-5 transition-all duration-300 flex flex-col flex-1 min-h-[220px] lg:max-h-[350px]">
+                <h2 class="text-[10px] font-black uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-3 flex items-center justify-between">
+                    <span>Savollar xaritasi</span>
+                    <span id="filteredCountBadge" class="text-[10px] bg-slate-200 dark:bg-slate-800 px-2.5 py-0.5 rounded-full font-black text-slate-600 dark:text-slate-300">100/100</span>
+                </h2>
+                
+                <div id="questionsMapContainer" class="grid grid-cols-5 sm:grid-cols-10 lg:grid-cols-5 gap-1.5 overflow-y-auto flex-1 pr-1 custom-scrollbar">
+                    <!-- Dynamic indicators injected here -->
+                </div>
+            </div>
+
+        </section>
+
+        <!-- RIGHT WORKPLACE -->
+        <section class="flex-1 flex flex-col lg:flex-row gap-5">
+            
+            <!-- LEFT COLUMN: ACTIVE TEST COMPONENT -->
+            <div class="flex-1 flex flex-col gap-5 min-w-0">
+                <!-- CURRENT QUESTION CONTAINER -->
+                <div class="glass-panel rounded-[32px] p-6 sm:p-8 transition-all duration-300 flex flex-col gap-6 relative overflow-hidden">
+                    <div class="absolute inset-0 watermark-bg opacity-[0.05] pointer-events-none"></div>
+
+                    <!-- Question Header -->
+                    <div class="flex items-center justify-between gap-3 z-10">
+                        <div class="flex items-center gap-2">
+                            <span id="questionIndexBadge" class="px-3.5 py-1 bg-slate-800 dark:bg-slate-200 text-white dark:text-slate-900 text-xs font-black rounded-full">SAVOL 1</span>
+                            <span id="questionSourceBadge" class="px-3.5 py-1 bg-white/50 dark:bg-slate-900/40 text-slate-600 dark:text-slate-400 text-[10px] font-bold rounded-full max-w-[150px] sm:max-w-[300px] truncate border border-white/20">Mavzu</span>
+                        </div>
+                        <button id="bookmarkBtn" onclick="toggleBookmarkActiveQuestion()" class="w-9 h-9 flex items-center justify-center rounded-xl hover:bg-white/50 dark:hover:bg-slate-800/40 text-slate-400 dark:text-slate-500 transition-all active:scale-90">
+                            <i class="fa-solid fa-star text-base"></i>
+                        </button>
+                    </div>
+
+                    <!-- Question Text -->
+                    <div class="z-10">
+                        <h3 id="questionTextDisplay" class="text-sm sm:text-base font-extrabold text-slate-850 dark:text-white leading-relaxed bg-white/35 dark:bg-slate-900/20 p-4 rounded-2xl border border-white/35 dark:border-slate-800/50">
+                            ...
+                        </h3>
+                    </div>
+
+                    <!-- Options List Container -->
+                    <div id="optionsListContainer" class="flex flex-col gap-3 z-10">
+                        <!-- Dynamic shuffled options will be loaded here -->
+                    </div>
+
+                    <!-- Navigation Controls -->
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/25 dark:border-slate-850 pt-5 mt-4 z-10">
+                        <div class="flex gap-2 w-full sm:w-auto">
+                            <button id="prevBtn" onclick="navigateToQuestion(-1)" class="flex-1 sm:flex-initial px-5 py-3 border border-white/30 dark:border-slate-800 rounded-xl hover:bg-white/40 dark:hover:bg-slate-800/30 font-extrabold text-xs flex items-center justify-center gap-1.5 transition-all text-slate-700 dark:text-slate-300">
+                                <i class="fa-solid fa-arrow-left"></i> Oldingisi
+                            </button>
+                            <button id="nextBtn" onclick="navigateToQuestion(1)" class="flex-1 sm:flex-initial px-5 py-3 bg-white/60 dark:bg-slate-800/40 hover:bg-white/80 dark:hover:bg-slate-850/55 border border-white/45 dark:border-slate-800 text-slate-850 dark:text-white font-extrabold text-xs flex items-center justify-center gap-1.5 transition-all">
+                                Keyingisi <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- Finish Exam Action -->
+                        <div class="w-full sm:w-auto flex justify-end">
+                            <button id="examSubmitBtn" onclick="finishExamPrompt()" class="hidden w-full sm:w-auto px-6 py-3 bg-indigo-500 hover:bg-indigo-600 text-white font-black text-xs rounded-xl flex items-center justify-center gap-1.5 shadow-md hover:shadow-lg transition-all">
+                                <i class="fa-solid fa-square-check"></i> Imtihonni topshirish
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- EXPLANATION VIEW CARD (Study Mode Only) -->
+                <div id="explanationCard" class="bg-white/30 dark:bg-slate-900/10 border border-white/40 dark:border-slate-800/40 rounded-[32px] p-6 sm:p-8 shadow-sm transition-all duration-300 flex flex-col gap-3">
+                    <div class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+                        <i class="fa-solid fa-circle-info text-base text-indigo-500 dark:text-indigo-400"></i>
+                        <h4 class="text-xs font-black uppercase tracking-wider">Metodik tahlil va yechim</h4>
+                    </div>
+                    <div class="bg-white/40 dark:bg-slate-900/40 rounded-2xl p-4 border border-white/40 dark:border-slate-800/50">
+                        <p id="explanationTextDisplay" class="text-xs sm:text-sm font-semibold italic text-slate-700 dark:text-slate-300 leading-relaxed">
+                            ...
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: INTERACTIVE WHITEBOARD -->
+            <div class="w-full lg:w-80 flex flex-col gap-5 shrink-0">
+                
+                <!-- THE INTERACTIVE WHITEBOARD -->
+                <div class="glass-panel rounded-[32px] p-5 flex flex-col gap-3 flex-1">
+                    <div class="flex items-center justify-between border-b border-white/20 pb-2">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-pen-nib text-indigo-500"></i>
+                            <span class="text-xs font-black uppercase tracking-wider text-slate-700 dark:text-slate-300">Tahlil Qoralamasi</span>
+                        </div>
+                        <button onclick="clearScratchpad()" class="text-[9px] px-2 py-1 bg-rose-500/10 text-rose-500 rounded-lg hover:bg-rose-500/20 font-bold transition-all">
+                            Tozalash
+                        </button>
+                    </div>
+
+                    <!-- Canvas Board -->
+                    <div class="relative flex-1 min-h-[160px] bg-white/40 dark:bg-slate-900/30 border border-slate-300/30 dark:border-slate-800/40 rounded-2xl overflow-hidden cursor-crosshair">
+                        <canvas id="scratchpadCanvas" class="absolute inset-0 w-full h-full"></canvas>
+                        <div id="scratchpadHint" class="absolute inset-0 flex items-center justify-center pointer-events-none text-slate-400 text-[10px] font-semibold text-center p-4">
+                            Sujet chizmalari, tahlillar yoki qoidalarni yozib ko'rish uchun chizing...
+                        </div>
+                    </div>
+
+                    <!-- Brush Configuration -->
+                    <div class="flex items-center justify-between gap-3 text-[10px] font-bold text-slate-500">
+                        <div class="flex items-center gap-2">
+                            <span>Rangi:</span>
+                            <div class="flex gap-1">
+                                <button onclick="setScratchpadColor('#6366f1')" class="w-4 h-4 rounded-full bg-indigo-500 border border-white/30"></button>
+                                <button onclick="setScratchpadColor('#10b981')" class="w-4 h-4 rounded-full bg-emerald-500 border border-white/30"></button>
+                                <button onclick="setScratchpadColor('#ef4444')" class="w-4 h-4 rounded-full bg-rose-500 border border-white/30"></button>
+                                <button id="eraseColorBtn" onclick="setScratchpadColor('eraser')" class="w-4 h-4 rounded flex items-center justify-center bg-slate-200 border border-white/30"><i class="fa-solid fa-eraser text-[8px] text-slate-600"></i></button>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <span>Qalinlik:</span>
+                            <input type="range" id="brushSizeSlider" min="1" max="10" value="3" class="w-16 h-1 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-500">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- RESULT MODAL -->
+    <div id="examResultModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-panel border border-white/40 dark:border-slate-800 rounded-[32px] max-w-lg w-full overflow-hidden shadow-2xl animate-scale-up">
+            
+            <div class="p-6 sm:p-8 flex flex-col items-center text-center border-b border-white/20 dark:border-slate-850">
+                <div class="w-16 h-16 bg-white/20 dark:bg-slate-900/40 text-slate-850 dark:text-white border border-white/30 dark:border-slate-800 rounded-full flex items-center justify-center text-2xl mb-4">
+                    <i class="fa-solid fa-graduation-cap animate-bounce text-indigo-500 dark:text-indigo-400"></i>
+                </div>
+                <h3 class="text-xl font-black text-slate-900 dark:text-white">Imtihon Yakunlandi!</h3>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1 font-bold">O'zbek tili va ish yuritish fanidan test tahlili.</p>
+
+                <!-- Numerical Statistics -->
+                <div class="my-6 grid grid-cols-3 gap-3 w-full">
+                    <div class="bg-white/40 dark:bg-slate-900/30 p-3.5 rounded-2xl text-center border border-white/20 dark:border-slate-800">
+                        <p class="text-[9px] font-black text-slate-500 dark:text-slate-400 uppercase">Yechildi</p>
+                        <p id="modalTotalAnswered" class="text-sm font-black text-slate-800 dark:text-white">0</p>
+                    </div>
+                    <div class="bg-emerald-500/10 p-3.5 rounded-2xl text-center border border-emerald-500/20">
+                        <p class="text-[9px] font-black text-emerald-500 uppercase">To'g'ri</p>
+                        <p id="modalCorrect" class="text-sm font-black text-emerald-600 dark:text-emerald-400">0</p>
+                    </div>
+                    <div class="bg-rose-500/10 p-3.5 rounded-2xl text-center border border-rose-500/20">
+                        <p class="text-[9px] font-black text-rose-500 uppercase">Noto'g'ri</p>
+                        <p id="modalIncorrect" class="text-sm font-black text-rose-600 dark:text-rose-400">0</p>
+                    </div>
+                </div>
+
+                <!-- Horizontal Percent Bar -->
+                <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-3 mb-2 overflow-hidden border border-white/20">
+                    <div id="modalPercentBar" class="h-full bg-slate-800 dark:bg-slate-200 rounded-full" style="width: 0%"></div>
+                </div>
+                <p id="modalPercentText" class="text-xs font-black text-slate-800 dark:text-white">Ko'rsatkich: 0%</p>
+                <p id="modalGradeText" class="text-[11px] font-bold text-slate-500 dark:text-slate-400 mt-3 px-2 leading-relaxed"></p>
+            </div>
+
+            <div class="p-4 bg-white/20 dark:bg-slate-950/40 flex flex-col gap-2">
+                <button onclick="reviewExamAnswers()" class="w-full py-3 bg-slate-900 hover:bg-black dark:bg-slate-100 dark:hover:bg-white text-white dark:text-slate-900 font-extrabold text-xs rounded-2xl transition-all shadow-sm">
+                    Xatolarni tahlil qilish (O'rganish rejimida)
+                </button>
+                <button onclick="closeModalAndReset()" class="w-full py-3 bg-white/40 hover:bg-white/60 dark:bg-slate-900/40 dark:hover:bg-slate-800/40 text-slate-800 dark:text-slate-300 border border-white/20 dark:border-slate-800 font-bold text-[10px] rounded-2xl transition-all">
+                    Qayta boshlash
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CORE JAVASCRIPT DATABASE (Full 100 items from requested docx) -->
+    <script>
+        const rawQuestionsData = [
+            {
+                id: 1,
+                q: "So‘zlаshuv uslubining o‘zigа хоs xususiyalаri berilgan qatorni toping.",
+                answer: "Barcha javoblar to‘g‘ri",
+                options: ["Nutqning dialogik shakli, ta’sirchanligi", "So‘z tartibining erkinligi", "To‘liqsiz gaplarning qo‘llanishi", "Barcha javoblar to‘g‘ri"],
+                explain: "So'zlashuv uslubida erkin so'z tartibi, to'liqsiz gaplar hamda dialogik ta'sirchanlik eng ko'zga ko'ringan tabiiy xususiyatlardir.",
+                cat: "uslub"
+            },
+            {
+                id: 2,
+                q: "Alisher Navoiy nechanchi yilda va qayerda tug‘ilgan?",
+                answer: "1441-yil Hirotda",
+                options: ["1445-yil Hirotda", "1441-yil Hirotda", "1500-yil Mashhadda", "1460-yil Astrobodda"],
+                explain: "G'azal mulkining sultoni Alisher Navoiy 1441-yil 9-fevralda Hirot shahrida tavallud topgan.",
+                cat: "imlo"
+            },
+            {
+                id: 3,
+                q: "Qaysi so‘zdagi qo’shimcha noto’g’ri yozilgan?",
+                answer: "ketti",
+                options: ["ketti", "og’gan", "sog’ga", "kelmabdi"],
+                explain: "Imlo qoidalariga ko'ra 'ketdi' so'zi d undoshi bilan yozilishi lozim. 'ketti' shaklidagi yozilish xato sanaladi.",
+                cat: "imlo"
+            },
+            {
+                id: 4,
+                q: "Kеtma-kеt kеlgan bir xil undoshlarning biri tushirilganda so‘z ma'nosi o‘zgaradigan qatorni bеlgilang.",
+                answer: "xullas, kurra, pilla",
+                options: ["millat, quvvat, jajji", "qattiq, modda, taqqa", "issiq, achchiq, marra", "xullas, kurra, pilla"],
+                explain: "Masalan: 'kurra' (Yer kurrasi) so'zidan bitta r tushsa, 'kura' (belkurak bilan kura) hosil bo'ladi. 'pilla' so'zidan l tushsa, 'pila' bo'lib ma'no butunlay o'zgaradi.",
+                cat: "imlo"
+            },
+            {
+                id: 5,
+                q: "Qaysi qatordagi so‘zlarda tutuq bеlgisi tushirib qoldirilsa yangi so‘z hosil bo‘ladi?",
+                answer: "sur'at, shе'r",
+                options: ["a'lo, jur'at", "ma'no, ra'no", "sur'at, shе'r", "shu'la, qit'a"],
+                explain: "Sur'at (tezlik) -> surat (rasm); she'r (badiiy asar) -> sher (hayvon) kabi yangi so'zlar hosil bo'ladi.",
+                cat: "imlo"
+            },
+            {
+                id: 6,
+                q: "Qaysi qo’shma so‘zlar qo’shib yozilishi lozim?",
+                answer: "barchasi qo’shib yoziladi",
+                options: ["sеmiz o’t", "gul ko’rpa", "bo’ta ko‘z", "barchasi qo’shib yoziladi"],
+                explain: "Semizo't, gulko'rpa, bo'tako'z kabi botanika va xalq orasida shakllangan o'simlik nomlari qo'shib yoziladi.",
+                cat: "imlo"
+            },
+            {
+                id: 7,
+                q: "Kilogramm so‘ziga –mi yuklamasi qo’shilganda qaysi holat yuz bеradi?",
+                answer: "kilogrammmi?",
+                options: ["kilogrammmi?", "kilogrami?", "kilagrammmi?", "kilogrammi?"],
+                explain: "So'z oxiridagi qo'sh undoshlar yuklama qo'shilganda ham saqlanadi: kilogramm + mi = kilogrammmi?",
+                cat: "imlo"
+            },
+            {
+                id: 8,
+                q: "Qaysi so‘zda tutuq bеlgisi bo‘lishi lozim?",
+                answer: "mano",
+                options: ["taqiq", "mano", "tayoq", "ayvon"],
+                explain: "Arabchadan o'zlashgan ushbu so'z ma'no shaklida tutuq belgisi bilan yoziladi.",
+                cat: "imlo"
+            },
+            {
+                id: 9,
+                q: "Qonun matnlari, farmonlar, buyruq va shartnoma kabi ish qog‘ozlari qaysi uslubda yoziladi?",
+                answer: "Rasmiy uslub",
+                options: ["Ilmiy uslub", "So‘zlashuv uslub", "Rasmiy uslub", "Publitsistik uslub"],
+                explain: "Barcha huquqiy-meyoriy hujjatlar va qonunchilik aktlari rasmiy-idoraviy uslubda yoziladi.",
+                cat: "uslub"
+            },
+            {
+                id: 10,
+                q: "Qaysi tartib sonlarning yozilishida xatolik mavjud?",
+                answer: "X-asr",
+                options: ["5-“A” sinf", "X-asr", "60-yillar", "XX asr"],
+                explain: "Rim raqamlaridan keyin tartib son hosil qiluvchi chiziqcha (defis) qo'yilmaydi. To'g'risi: X asr.",
+                cat: "imlo"
+            },
+            {
+                id: 11,
+                q: "Nuqtalar o’rniga x undoshi qo’yish lozim bo‘lgan qatorni toping.",
+                answer: "ta..t, ...ulosa, sa..iy",
+                options: ["ta..t, ...ulosa, sa..iy", "ru..., a...vol, sho...", "....adya, a...oli, mu...r", " D. da...o, u..., so...ib."],
+                explain: "Imlo qoidalariga ko'ra taxt, xulosa va saxiy so'zlari chuqur til orqa bo'g'iz tovushi 'x' bilan yoziladi.",
+                cat: "imlo"
+            },
+            {
+                id: 12,
+                q: "Hujjаtlarda, asosan, gaplarning ifoda maqsadiga ko’ra qanday turlari ishtirok etadi?",
+                answer: "Darak va buyruq gaplar",
+                options: ["Undov va so’roq gaplar", "Darak va buyruq gaplar", "So’roqva buyruq gaplar", "Darak va undov gaplar"],
+                explain: "Hujjatlarda xolis axborot beriladi (darak gap) yoki ko'rsatma, topshiriq beriladi (buyruq gap).",
+                cat: "hujjat"
+            },
+            {
+                id: 13,
+                q: "Hujjat so’zi qaysi tildan olingan?",
+                answer: "arab",
+                options: ["turkiy", "uyg’ur", "arab", "gagauz"],
+                explain: "Hujjat so'zi arab tilidan kirib kelgan bo'lib, 'isbot', 'dalil', 'guvohlik o'tuvchi yozuv' ma'nolarini bildiradi.",
+                cat: "hujjat"
+            },
+            {
+                id: 14,
+                q: "“O‘zbek tilining asosiy imlo qoidalari” qachon tasdiqlangan?",
+                answer: "1995-yil 24-avgust",
+                options: ["1956-yil 4-aprel", "1995-yil 6-may", "1993-yil 2-sentabr", "1995-yil 24-avgust"],
+                explain: "Lotin yozuviga asoslangan amaldagi asosiy imlo qoidalari 1995-yil 24-avgustda tasdiqlangan.",
+                cat: "imlo"
+            },
+            {
+                id: 15,
+                q: "Hujjat haqidagi noto’g’ri fikrni belgilang.",
+                answer: "hujjatlar tuzatiladi",
+                options: ["hujjatlar tuzatiladi", "hujjatlar tasdiqlanadi", "hujjatlar imzolanadi", "hujjatlar saqlnadi"],
+                explain: "Rasmiy rasmiylashtirilgan hujjatlarni o'zboshimchalik bilan chizib yoki o'chirib tuzatish mumkin emas.",
+                cat: "hujjat"
+            },
+            {
+                id: 16,
+                q: "Nuqtalar o’rniga h yoziladigan so‘zlarni toping?",
+                answer: "xatti-harakat",
+                options: ["…ohlamoq", "ru…sat", "xatti-harakat", "…ato"],
+                explain: "Harakat so'zi bo'g'iz tovushi 'h' bilan yozilgani uchun xatti-harakat so'zida 'h' ishtirok etadi.",
+                cat: "imlo"
+            },
+            {
+                id: 17,
+                q: "O‘z nomidan ish ko‘rish uchun yoziladigan vakolatli hujjat nima deb yuritiladi?",
+                answer: "Ishonchnoma",
+                options: ["Bildirishnoma", "Shartnoma", "Dalolatnoma", "Ishonchnoma"],
+                explain: "Ishonchnoma biror jismoniy yoki yuridik shaxs tomonidan boshqa vakilga o'z nomidan ish yuritish vakolatini beruvchi hujjatdir.",
+                cat: "hujjat"
+            },
+            {
+                id: 18,
+                q: "Adabiy til qaysi manba negizida yuzaga kelgan?",
+                answer: "Xalq tili negizida",
+                options: ["Davlat tili negizida", "Xalq tili negizida", "Hech qanday negizsiz yuzaga keladi", "Qardosh tillar negizida"],
+                explain: "Har qanday milliy adabiy til millatning uzoq vaqt davomida sayqallangan jonli xalq tili va shevalari asosida shakllanadi.",
+                cat: "uslub"
+            },
+            {
+                id: 19,
+                q: "Barcha hujjatlar…shart",
+                answer: "Ro’yxatga olinishi",
+                options: ["Ro’yxatga olinishi", "Sanab borilishi.", "Bosmacha bo‘lishi", "Kopaytirilishi"],
+                explain: "Rasmiy hujjatlar o'z kuchini va nazoratini ta'minlash uchun tegishli idorada ro'yxatga (registratsiya) olinishi shart.",
+                cat: "hujjat"
+            },
+            {
+                id: 20,
+                q: "«Pаttа» dа qаndаy mа’lumоt аks etgаn?",
+                answer: "Mа’lum kishigа muаyyan miqdоrdаgi pul, mаhsulоt, dоn yoki bоshqа nаrsаlаrni bеrish lоzimligi hаqidаgi mа’lumоt аks ettirilgаn",
+                options: [
+                    "Mа’lum shaharni barpo etish lоzimligi hаqidаgi mа’lumоt аks ettirilgаn",
+                    "Mа’lum kishigа muаyyan miqdоrdаgi pul, mаhsulоt, dоn yoki bоshqа nаrsаlаrni bеrish lоzimligi hаqidаgi mа’lumоt аks ettirilgаn",
+                    "Mа’lum korxonaga  muаyyan miqdоrdаgi mablag’ оlish lоzimligi hаqidаgi mа’lumоt аks ettirilgаn",
+                    "Mа’lum qishloqni ko’chirish lоzimligi hаqidаgi mа’lumоt аks ettirilgаn"
+                ],
+                explain: "Tarixiy manbalarda 'patta' soliqlar yoki muayyan tovar, mahsulotlarni berish majburiyatini tasdiqlagan qog'ozdir.",
+                cat: "hujjat"
+            },
+            {
+                id: 21,
+                q: "Vasiyat qiluvchi vasiyatnomani o‘zgartirishi mumkinmi?",
+                answer: "Mumkin",
+                options: ["Mumkin", "Tushuntirish xati yozgan holda mumkin", "Ayrim hollarda", "Mumkin emas"],
+                explain: "Fuqarolik qonunchiligiga binoan, vasiyat qiluvchi hayotlik davrida istalgan vaqtda vasiyatnomani o'zgartirishi yoki bekor qilishi mumkin.",
+                cat: "hujjat"
+            },
+            {
+                id: 22,
+                q: "XIX asrda Qo’qon xonligida keng amal qilgan hujjat turi qaysi?",
+                answer: "Farmonnoma",
+                options: ["Tilxat", "Farmonnoma", "Bitim", "Patta"],
+                explain: "O'rta Osiyo xonliklarida oliy hukmdorlar buyrug'i hisoblangan 'Farmonnoma'lar keng qo'llanilgan.",
+                cat: "hujjat"
+            },
+            {
+                id: 23,
+                q: "Tavsifnoma nima?",
+                answer: "Shaxsning mehnat va ijtimoiy faolyati o‘ziga xos xislat va fazilatni aks ettiruvchi hujjat",
+                options: [
+                    "O‘z shaxsiy hayoti va faoliyatini bayon qiladigan hujjat",
+                    "Ma’muriyat yoki shaxs tomonidan beriladigan, shaxsning ijobiy xususiyatlari qayd etiladigan rasmiy hujjat",
+                    "Shaxsning mehnat va ijtimoiy faolyati o‘ziga xos xislat va fazilatni aks ettiruvchi hujjat",
+                    "Muassasa tomonidan fuqarolarning turmushi va ish faoliyatidagi voqea-hodisalar va holatlarni tasdiqlab beruvshi rasmiy hujjat."
+                ],
+                explain: "Tavsifnoma (Xarakteristika) xodim yoki talabaning jamoadagi o'rni, kasbiy fazilatlari va xulqini tasdiqlovchi rasmiy baho hujjatidir.",
+                cat: "hujjat"
+            },
+            {
+                id: 24,
+                q: "Gapning qismlari qavsli raqam yoki qavsli harf qo’yib sanalsa, bunday qismlar ......  yoziladi?",
+                answer: "kichik harf bilan yoziladi",
+                options: ["chiziqcha bilan yoziladi", "qo’shib yoziladi", "kichik harf bilan yoziladi", "bosh harf bilan yoziladi"],
+                explain: "Tinish belgilari qoidasiga ko'ra, agar sanaladigan bandlar qavs bilan ajratilsa (masalan: a), b)), matn kichik harfdan davom etadi.",
+                cat: "imlo"
+            },
+            {
+                id: 25,
+                q: "Adabiy til me’yoriga xos xususiyat qaysi qatorda to’g’ri berilgan?",
+                answer: "Me’yor vaqt o’tishi bilan o‘zgarib turadi",
+                options: ["Me’yor vaqt o’tishi bilan o‘zgarib turadi", "Me’yor hech qachon o‘zgarmaydi", "Me’yor har yili o‘zgaradi", "Me’yor har besh yilda yangilanadi"],
+                explain: "Adabiy me'yorlar jamiyat ehtiyojlari, til taraqqiyoti va davrlar o'tishi bilan barqaror holda asta-sekin rivojlanadi va o'zgaradi.",
+                cat: "uslub"
+            },
+            {
+                id: 26,
+                q: "Narsani joyga nisbat berishni bildiruvchi qo’shma otni toping?",
+                answer: "tog’olcha",
+                options: ["qizilishton", "kirsovun", "tog’olcha", "tokqaychi"],
+                explain: "Tog'olcha - tog'da o'sadigan olcha ma'nosida joyga nisbat berib yasalgan qo'shma otdir.",
+                cat: "imlo"
+            },
+            {
+                id: 27,
+                q: "Mu...bir, ...abar, ta...ta, ...ijolat so‘zlarida hosil bo‘lish o’rniga ko’ra qanday tovush mavjud?",
+                answer: "chuqur til orqa undoshi",
+                options: ["chuqur til orqa undoshi", "bo’giz undoshi", "til orqa undoshi", "til oldi"],
+                explain: "Ushbu so'zlardagi 'x' undoshi hosil bo'lish o'rniga ko'ra chuqur til orqa undoshi sanaladi.",
+                cat: "imlo"
+            },
+            {
+                id: 28,
+                q: "Qonun yoki boshqa me’yoriy hujjatlarni tushuntirish maqsadida chiqariladigan huquqiy hujjat qanday nomlanadi?",
+                answer: "Yo’riqnoma",
+                options: ["Nizom", "Yo’riqnoma", "Shartnoma", "qoida"],
+                explain: "Yo'riqnoma qonun yoki me'yoriy qoidalarni amalda qanday bajarish lozimligini batafsil yo'l-yo'riqlar orqali tushuntiradi.",
+                cat: "hujjat"
+            },
+            {
+                id: 29,
+                q: "Hujjаt matniga qo’yiladigan eng muhim talab...",
+                answer: "Xolislik",
+                options: ["Muloyimlik", "Ilmiylik", "Ravonlik", "Xolislik"],
+                explain: "Rasmiy-idoraviy hujjatlarda shaxsiy his-tuyg'ular bo'lmasligi, har qanday fakt xolislik asosida bayon qilinishi shart.",
+                cat: "hujjat"
+            },
+            {
+                id: 30,
+                q: "Buyruq, ko‘rsatma, farmoyish kabi hujjatlar xizmat mavqeyiga ko‘ra qanday hujjatlar hisoblanadi?",
+                answer: "Farmoyish hujjatlar",
+                options: ["Tashkiliy hujjatlar", "Farmoyish hujjatlar", "Ma’lumotsimonaxborot hujjatlar", "Shaxsiy hujjatlar"],
+                explain: "Ushbu hujjatlar rahbar tomonidan boshqaruv xarakteridagi ko'rsatmalarni beruvchi 'Farmoyish hujjatlar' turkumiga kiradi.",
+                cat: "hujjat"
+            },
+            {
+                id: 31,
+                q: "Tarjimayi holga qo‘yiladigan qaysi talablar noto‘g‘ri?",
+                answer: "Barcha talablar to‘g‘ri.",
+                options: [
+                    "Hikoya uslubida bo‘lib, I shaxs tilidan yoziladi",
+                    "Ma’lumotlar xronologiya asosida, aniq sanalar bilan beriladi",
+                    "U bilan tanishgan kishi muallifning hayot yo‘li va faoliyati haqida tasavvurga ega bo‘lishi kerak",
+                    "Barcha talablar to‘g‘ri."
+                ],
+                explain: "Berilgan barcha variantlar (xronologik tartib, I shaxs tilidan hikoya qilinishi, hayot yo'li) tarjimayi holning qat'iy talablari hisoblanadi.",
+                cat: "hujjat"
+            },
+            {
+                id: 32,
+                q: "Iltimos, taklif yoki shikoyat mazmunida yoziladigan hujjat nima?",
+                answer: "Ariza",
+                options: ["Ma’lumotnoma", "Ishonchnoma", "Ariza", "Bildirishnoma"],
+                explain: "Ariza fuqarolarning ma'muriyat yoki biror tashkilotga o'z xohish-istagi, shikoyati yoki iltimosini yozma bildirishidir.",
+                cat: "hujjat"
+            },
+            {
+                id: 33,
+                q: "Guvоhnоmа bu - ",
+                answer: "Shахsning хizmаt vа bоshqа hоlаtlаrini, shuningdеk, birоr ishgа vаkоlаtini ko’rsаtuvchi hujjаt",
+                options: [
+                    "Shахsgа fаqаtginа sаfаrgа chiqqаndа bеrilаdigаn hujjаt turi .",
+                    "Kоrхоnаning хizmаt vа bоshqа hоlаtlаrini ko’rsаtuvchi hujjаt",
+                    "Shахsning хizmаt vа bоshqа hоlаtlаrini, shuningdеk, birоr ishgа vаkоlаtini ko’rsаtuvchi hujjаt",
+                    "Shахsning ishdаn bo’shаtilgаnda bеrilаdigаn hujjаt"
+                ],
+                explain: "Guvohnoma shaxsning shaxsi yoki uning muayyan faoliyat sohasidagi qonuniy vakolatlari va huquqini tasdiqlovchi rasmiy hujjatdir.",
+                cat: "hujjat"
+            },
+            {
+                id: 34,
+                q: "Qaysi hujjat turlari yozilish shakliga ko‘ra o‘xshash?",
+                answer: "Tavsifnoma, tavsiyanoma",
+                options: [
+                    "Tavsifnoma, tavsiyanoma",
+                    "Dalolatnoma, da’vo arizasi, shartnoma",
+                    "Buyruq, bayonnoma, farmoyish",
+                    "Ariza, tushuntirish xati, bildirishnoma"
+                ],
+                explain: "Tavsifnoma va tavsiyanomalar shaxs xislatlarini bayon etish strukturasi va uslubiy jihatidan bir-biriga juda yaqindir.",
+                cat: "hujjat"
+            },
+            {
+                id: 35,
+                q: "Bironbir tadbir yoki boshqa narsa haqida xabardor qilish uchun qo‘llanuvchi yozma axborot nima?",
+                answer: "E’lon",
+                options: ["Bildirishnoma", "Farmoyish", "E’lon", "Ma’lumotnoma"],
+                explain: "E'lon keng ommaga biror voqea, tadbir yoki yangilikni tezkor yozma ravishda yetkazish vositasidir.",
+                cat: "hujjat"
+            },
+            {
+                id: 36,
+                q: "Qaysi hujjat turida tinish belgilari tushirib qoldirilishi mumkin?",
+                answer: "Telegramma",
+                options: ["Telefonogramma", "Tilxat", "Telegramma", "Vasiyatnoma"],
+                explain: "Telegramma matnlarida ortiqcha xarajatlarning oldini olish maqsadida tinish belgilari tushirib qoldirilishi yoki qisqartirilishi mumkin.",
+                cat: "hujjat"
+            },
+            {
+                id: 37,
+                q: "Adabiy tilda so‘z tanlash imkoniyatlarini qaysi me’yor belgilaydi?",
+                answer: "Leksik",
+                options: ["Leksik", "Talaffuz", "Imlo", "Sintaktik"],
+                explain: "Leksik me'yor so'zlarni o'z ma'nosida va nutq vaziyatiga mos holda to'g'ri tanlab ishlatishni belgilaydi.",
+                cat: "uslub"
+            },
+            {
+                id: 38,
+                q: "Qaysi olinma so‘zlar noto’g’ri yozilgan? 1.aerostat 2. poyema 3. vakum 4. ukrain 5. mozaika",
+                answer: "2,3",
+                options: ["2,5", "2,3", "1,2,3,4,5", "1,3,4"],
+                explain: "To'g'ri yozilishi: 'poema' (y-siz) va 'vakuum' (ikki u bilan) bo'lishi lozim.",
+                cat: "imlo"
+            },
+            {
+                id: 39,
+                q: "Qaysi so‘z noto’g’ri yozilgan?",
+                answer: "gurgut",
+                options: ["projektor", "yonmayon", "gurgut", "badxo’r"],
+                explain: "Ushbu so'zning imlodagi to'g'ri shakli 'gugurt' deb yoziladi.",
+                cat: "imlo"
+            },
+            {
+                id: 40,
+                q: "Qaysi juft so‘zlarning o’rnini almashtirib qo’llash mumkin?",
+                answer: "shavq-zavq",
+                options: ["sha’n-shavkat", "sharm-hayo", "chizma-chiziq", "shavq-zavq"],
+                explain: "'Shavq' va 'zavq' so'zlari his-hayajon ma'nosidagi yaqin sinonimlar bo'lib, o'zaro o'rin almasha oladi.",
+                cat: "uslub"
+            },
+            {
+                id: 41,
+                q: "Qaysi so‘zlardagi b harfi v tarzida  talaffuz qilinadi?",
+                answer: "qibla, tobla",
+                options: ["tavba, arbob", "qibla, tobla", "Abror, asbob", "truba, tumbochka"],
+                explain: "O'zbek jonli so'zlashuv tilida 'qibla' -> [qivla], 'tobla' -> [tovla] kabi tovush o'zgarishi ro'y beradi.",
+                cat: "uslub"
+            },
+            {
+                id: 42,
+                q: "Memorandum, bitim  kabi hujjat turlari rasmiy uslubning qaysi turiga kiradi?",
+                answer: "Diplomatik uslub",
+                options: ["Idoraviy-devonxona uslubi", "Sof qonunchilik uslubi", "Diplomatik uslub", "Xizmat yozishmalari."],
+                explain: "Memorandumlar va xalqaro bitimlar diplomatik munosabatlarni tartibga soluvchi diplomatik hujjatlar hisoblanadi.",
+                cat: "uslub"
+            },
+            {
+                id: 43,
+                q: "Hujjatchilik tarixidan bizgacha saqlanib qolgan eng qadimgi hujjatni toping",
+                answer: "Shoh Ur Nammuning  qonunlari",
+                options: ["Shoh Ur Nammuning  qonunlari", "Pyotr I qonunlari", "Yapon Imperatori chiqargan qonunlar", "Xitoy davlati qonunlari"],
+                explain: "Shumerlar davriga oid bo'lgan Shoh Ur-Nammu qonunlari dunyo tarixidagi eng qadimgi huquqiy yozma yodgorliklardan biri.",
+                cat: "hujjat"
+            },
+            {
+                id: 44,
+                q: "Adabiy til me’yori nima?",
+                answer: "Til unsurlarining  xalq o’rtasida ko’pchilikka ma’qul bo‘lgan  variantini qo’llash",
+                options: [
+                    "Til unsurlarining  xalq o’rtasida ko’pchilikka ma’qul bo‘lgan  variantini qo’llash",
+                    "Yozuvchi va shoirlar qo’llagan unsurlarni qo’llash",
+                    "Mumtoz adabiyotning eng sara unsurlarini qo’llash",
+                    "Poytaxt shevasi unsurlarini qo’llash"
+                ],
+                explain: "Adabiy til normasi - jamiyat tomonidan ma'qullanib, qat'iy qolipga tushirilgan til qoidalaridir.",
+                cat: "uslub"
+            },
+            {
+                id: 45,
+                q: "Matnning mazmuni deganda... tushuniladi",
+                answer: "har qanday matn asosida yotgan  axborot",
+                options: [
+                    "matndagi so‘zlarning alohida ma’nolari",
+                    "matndagi so‘z birikmalarining alohida ma’nolari",
+                    "matndagi uslubiy qirra",
+                    "har qanday matn asosida yotgan  axborot"
+                ],
+                explain: "Matn mazmuni - uning tarkibidagi barcha gaplar va so'zlar orqali ifodalanayotgan yaxlit g'oya va asosiy axborotdir.",
+                cat: "uslub"
+            },
+            {
+                id: 46,
+                q: "O‘zbek tilida sana yozishda rus tili ta’sirida qanday xatolik bor?",
+                answer: "So‘z tartibida",
+                options: ["So‘z qo’llashda", "So‘z tartibida", "Morfologik", "Fonetik"],
+                explain: "O'zbek tilida yil oxirida keladi (M: 2026-yil 17-iyun), ruscha ta'sirda esa sonlarning tartibi noto'g'ri qo'llanishi uchraydi.",
+                cat: "imlo"
+            },
+            {
+                id: 47,
+                q: "Hujjаtlаr mаzmunigа ko’rа  nеchа turgа bo‘linаdi",
+                answer: "2, sоddа vа murаkkаb",
+                options: ["2, sоddа vа murаkkаb", "2, ichki vа tаshqi", "3 sоddа, o’rtаchа, murаkkаb", "2, оshkorа vа оshkorа emаs"],
+                explain: "Hujjatlar mazmuni va tarkibining murakkabligiga ko'ra sodda (bir mavzuli) va murakkab (ko'p mavzuli) turlarga ajratiladi.",
+                cat: "hujjat"
+            },
+            {
+                id: 48,
+                q: "Muassasaning asosiy va kundalik vazifalarini hal etish maqsadida qo‘llaniladigan hujjat",
+                answer: "Buyruq deyiladi",
+                options: ["Hisobot deyiladi", "Guvohnoma deyiladi", "Buyruq deyiladi", "Dalolatnoma deyiladi"],
+                explain: "Muassasa rahbariyati tomonidan kunlik boshqaruvni ta'minlash uchun chiqariladigan qat'iy hujjat buyruqdir.",
+                cat: "hujjat"
+            },
+            {
+                id: 49,
+                q: "Ko‘chirma olinadigan hujjat turini belgilang.",
+                answer: "Buyruq, bayonnoma",
+                options: ["Buyruq, bayonnoma", "Tilxat, ishonchnoma", "Farmoyish, dalolatnoma", "Tavsufnoma, tavsiyanoma"],
+                explain: "Katta hajmli buyruq yoki bayonnomalarning kerakli qismini taqdim etish uchun ulardan ko'chirma olinadi.",
+                cat: "hujjat"
+            },
+            {
+                id: 50,
+                q: "Buyruqning kirish qismida nima yoritiladi?",
+                answer: "Buyruqdan maqsad va sabablar ko’rsatiladi",
+                options: [
+                    "Buyruqning saqlanish muddati ko’rsatiladi",
+                    "Buyruq qaratilgan shaxs ko’rsatiladi",
+                    "Buyruq ijrochisi haqida ma’lumot beriladi",
+                    "Buyruqdan maqsad va sabablar ko’rsatiladi"
+                ],
+                explain: "Buyruqning kirish (preambula) qismida ushbu farmoyishni chiqarishga undagan sabab va huquqiy asoslar qayd etiladi.",
+                cat: "hujjat"
+            },
+            {
+                id: 51,
+                q: "Buyruqning fаrmоyish qismi qаndаy yozilаdi?",
+                answer: "Yangi sаtrdаn bоsh hаrflаr bilаn yozilаdigаn “BUYURАMАN” so‘zi bilаn bоshlаnаdi",
+                options: [
+                    "Yangi sаtrdаn bоsh hаrflаr bilаn yozilаdigаn “BUYURАMАN” so‘zi bilаn bоshlаnаdi",
+                    "Yangi sаtrdаn bоsh hаrflаr bilаn yozilаdigаn “QАRОR” so‘zi bilаn bоshlаnаdi",
+                    "Yangi sаtrdаn kichik hаrflаr bilаn yozilаdigаn “buyurаmаn” so‘zi bilаn bоshlаnаdi",
+                    "Yangi sаtrdаn kichik hаrflаr bilаn yozilаdigаn “qаrоr” so‘zi bilаn bоshlаnаdi"
+                ],
+                explain: "Buyruq matnida preambuladan so'ng yangi satrdan katta harflar bilan 'BUYURAMAN' so'zi yozilib, buyruq bandlari sanaladi.",
+                cat: "hujjat"
+            },
+            {
+                id: 52,
+                q: "Qo’ldа yozilishi shаrt bo‘lgаn hujjаt turini аniqlаng",
+                answer: "Tilxat",
+                options: ["Ko’chirmа", "Bаyonnоmа", "Tilxat", "Buyruq"],
+                explain: "Tilxat (Kvitansiya) qabul qilingan mablag' yoki mulkni tasdiqlash uchun shaxsan qo'lda va imzo bilan yozilishi shart bo'lgan hujjatdir.",
+                cat: "hujjat"
+            },
+            {
+                id: 53,
+                q: "Muаssаsа yoki аyrim shахslаr fаоliyati bilаn bоg’liq birоn bir bo‘lgаn vоqеа, hоdisа, ish-hоlаtini yoki mаvjud hоlаtni tаsdiqlаsh, ungа guvоhlik bеrish mаqsаdidа bir nеchа kishi tоmоnidаn tuzilgаn hujjаt nimа dеb аtаlаdi?",
+                answer: "Dаlоlаtnоmа",
+                options: ["Dаlоlаtnоmа", "Arizа", "Tilxat", "Buyruq"],
+                explain: "Bir guruh vakillar ishtirokida ma'lum faktni tasdiqlash uchun tuziladigan rasmiy hujjat Dalolatnoma (Akt) deyiladi.",
+                cat: "hujjat"
+            },
+            {
+                id: 54,
+                q: "Tаshkiliy hujjаt turlari berilgan qatorni belgilang",
+                answer: "Shartnoma, guvohnoma, yo’riqnoma, nizom",
+                options: [
+                    "Shartnoma, guvohnoma, yo’riqnoma, nizom",
+                    " Ariza, ma’lumotnoma, fаrmоyish, e’lon",
+                    " Dаlоlаtnоmа, shartnoma, buyruq, arznoma",
+                    "Ishonchnoma, bildirishnoma, buyruq, bitim"
+                ],
+                explain: "Tashkilotning tuzilishi, boshqarilishi va qonuniy maqomini belgilovchi ustav, nizom, yo'riqnomalar tashkiliy hujjatlardir.",
+                cat: "hujjat"
+            },
+            {
+                id: 55,
+                q: "Qaysi hujjat turi kun tartibi, qaror kabi qismlardan iborat?",
+                answer: "Bayonnoma",
+                options: ["E’lon", "Bayonnoma", "Dalolatnoma", "Hisobot"],
+                explain: "Yig'ilishlar, anjumanlar borishini yozib boruvchi Bayonnomada 'Kun tartibi', 'Eshitildi', 'Qaror qilindi' kabi standart qismlar mavjud.",
+                cat: "hujjat"
+            },
+            {
+                id: 56,
+                q: "Xizmat vazifalarini bajarishda ish beruvchi va xodimlar o’rtasidagi shartlar majmuasi qanday nomlanadi?",
+                answer: "Mehnat shartnomasi",
+                options: ["Mehnat shartnomasi", "Bitim", "Kelishuv", "Nizom"],
+                explain: "Xodim bilan ish beruvchi o'rtasidagi munosabatlarni qonuniy tartibga soluvchi hujjat Mehnat shartnomasi hisoblanadi.",
+                cat: "hujjat"
+            },
+            {
+                id: 57,
+                q: "Jamiyatning barcha a’zolari yozishi mumkin bo‘lgan hujjat turlarini belgilang",
+                answer: "E’lon",
+                options: ["Bildirishnoma", "Hisobot", "Bayonnoma", "E’lon"],
+                explain: "E'lonlar va arizalar jamiyatning barcha a'zolari tomonidan ehtiyojga ko'ra erkin yozilishi mumkin.",
+                cat: "hujjat"
+            },
+            {
+                id: 58,
+                q: "Majhul nisbat shakli qaysi uslublarda ko’p ishlatiladi?",
+                answer: "rasmiy, ilmiy",
+                options: ["badiiy, publitsistik", "so’zlashuv, publitsistik", "rasmiy, ilmiy", "ilmiy, badiiy"],
+                explain: "Xolislik va aniqlik talab etilgani uchun majhul nisbatli fe'llar rasmiy va ilmiy uslublarda juda faol qo'llaniladi.",
+                cat: "uslub"
+            },
+            {
+                id: 59,
+                q: "Qaysi so‘z rasmiy uslubga xos?",
+                answer: "qonun",
+                options: ["qonun", "bashara", "samo", "chumchuq"],
+                explain: "'Qonun' so'zi sof huquqiy va rasmiy-idoraviy muloqot doirasidagi atamadir.",
+                cat: "uslub"
+            },
+            {
+                id: 60,
+                q: "To’g’ri yozilgan so‘zni toping?",
+                answer: "abituriyent",
+                options: ["adabyot", "baxor", "abituriyent", "kinotiatr"],
+                explain: "To'g'ri yozilishi: adabiyot, bahor, kinoteatr. Faqat 'abituriyent' so'zi xatosiz yozilgan.",
+                cat: "imlo"
+            },
+            {
+                id: 61,
+                q: "Hujjatlar, asosan, nutqning qaysi shaklida bo’ladi?",
+                answer: "yozma",
+                options: ["yozma", "og’zaki", "video", "audio"],
+                explain: "Hujjatlar qonuniy kuch va turg'unlik kasb etishi uchun majburiy ravishda yozma shaklda rasmiylashtiriladi.",
+                cat: "hujjat"
+            },
+            {
+                id: 62,
+                q: "Qaysi birikmalarda qo’shtirnoq ishlatiladi?",
+                answer: "Yoshlik jurnali",
+                options: ["Xotira kuni", "Atlantika okeani", "Yoshlik jurnali", "Sog’liqni saqlash vazirligi"],
+                explain: "Matbuot nashrlari, kitoblar, jurnal nomlari imloda qo'shtirnoq bilan ajratib ko'rsatiladi: \"Yoshlik\" jurnali.",
+                cat: "imlo"
+            },
+            {
+                id: 63,
+                q: "Qonun qayerda chop etiladi?",
+                answer: "gazetada",
+                options: ["jurnalda", "gazetada", "darslikda", "qo’llanmada"],
+                explain: "Davlat qonunlari qabul qilingach, rasmiy davlat gazetasida e'lon qilingandan so'ng rasman qonuniy kuchga kiradi.",
+                cat: "hujjat"
+            },
+            {
+                id: 64,
+                q: "O‘zbek adabiy tilining qanday shakllari mavjud?",
+                answer: "og’zaki va yozma",
+                options: ["qarluq va qipchoq", "tashqi va ichki", "og’zaki va yozma", "umumiy va xususiy"],
+                explain: "Adabiy til o'zining og'zaki nutq shakli hamda adabiy-yozma me'yoriy shakllariga ega.",
+                cat: "uslub"
+            },
+            {
+                id: 65,
+                q: "Publitsistik uslubga xos janrlar qatorini toping",
+                answer: "felyeton va pamfletlar, murojaatnomalar",
+                options: [
+                    "felyeton va pamfletlar, murojaatnomalar",
+                    "topishmoq, ruboiy, chiston",
+                    "drama, tragediya, komediya",
+                    "vasiyatnoma, shartnoma, ma’lumotnoma"
+                ],
+                explain: "Felyetonlar, ommaviy murojaatnomalar va ijtimoiy-siyosiy publitsistik maqolalar ommabop uslubga xosdir.",
+                cat: "uslub"
+            },
+            {
+                id: 66,
+                q: "O‘zbek tilida nechta tinish belgisi mavjud?",
+                answer: "10",
+                options: ["11", "13", "10", "12"],
+                explain: "O'zbek yozma nutqida jami 10 ta tinish belgisi ishlatiladi (nuqta, vergul, nuqtali vergul, ikki nuqta, ko'p nuqta, so'roq, undov, tire, qavs, qo'shtirnoq).",
+                cat: "imlo"
+            },
+            {
+                id: 67,
+                q: "So‘zlаshuv uslubining xususiyai berilgan qatorni toping",
+                answer: "asosan, og’zaki shaklda",
+                options: ["asosan, og’zaki shaklda", "dalillanganlik", "qoliplanganlik", "yozma shaklda"],
+                explain: "So'zlashuv uslubi kundalik hayotda erkin va asosan og'zaki nutqiy shaklda amal qiladi.",
+                cat: "uslub"
+            },
+            {
+                id: 68,
+                q: "Prezidentimiz Sh.M.Mirziyoyev rasmiy taklif bilan Turkiya davlatiga tashrif buyurishdi. Ushbu gap qaysi uslubga xos?",
+                answer: "Publitsistik uslubga",
+                options: ["Rasmiy-idoraviy uslubga", "So‘zlashuv uslubiga", "Badiiy uslubga", "Publitsistik uslubga"],
+                explain: "Ommaviy axborot vositalari, matbuot va yangiliklarda e'lon qilinadigan rasmiy xabarlar publitsistik uslubga kiradi.",
+                cat: "uslub"
+            },
+            {
+                id: 69,
+                q: "Pedagog so’zining ma’nosi?",
+                answer: "bola yetaklovchi",
+                options: ["bola yetaklovchi", "aqlli odam", "hayo kishisi", "sofdil odam"],
+                explain: "Pedagog so'zi qadimgi yunoncha 'pedagogos' - 'bola yetaklovchi' degan so'zdan olingan.",
+                cat: "uslub"
+            },
+            {
+                id: 70,
+                q: "Farmon, fuqarolik va jinoiy aktlar, nizom hol kabi hujjat turlari rasmiy uslubning qaysi turiga kiradi?",
+                answer: "Sof qonunchilik uslubi",
+                options: ["Idoraviy-devonxona uslubi", "Diplomatik uslub", "Xizmat yozishmalari", "Sof qonunchilik uslubi"],
+                explain: "Davlat qonunlari va oliy darajadagi kodeks, nizomlar 'sof qonunchilik' doirasiga tegishli.",
+                cat: "uslub"
+            },
+            {
+                id: 71,
+                q: "Ikki elementli tinish belgilari",
+                answer: "ikki nuqta, nuqtali vergul, so’roq, undov va qavs",
+                options: [
+                    "nuqta, vergul, tire, so’roq, undov ",
+                    "ikki nuqta, nuqtali vergul, so’roq, undov va qavs ",
+                    "qo’shtirnoq, ikki nuqta, nuqtali vergul, nuqta, vergul",
+                    "ko’p nuqta, nuqtali vergul, so’roq, undov, qo’shtirnoq "
+                ],
+                explain: "Qavs va qo'shtirnoq kabi belgilar qo'shaloq (juft) elementlardan iborat bo'lgani sababli ikki elementli deyiladi.",
+                cat: "imlo"
+            },
+            {
+                id: 72,
+                q: "O`zbеk tilidаgi nutq uslublаri to`g`ri ko`rsаtilgаn qаtоrni tоping",
+                answer: "Ilmiy, оmmаbоp, bаdiiy, rаsmiy, so`zlаshuv",
+                options: [
+                    "Bаdiiy, so`zlаshuv, аdаbiy, kitоbiy ",
+                    "So`zlаshuv, аdаbiy",
+                    "Ilmiy, оmmаbоp, bаdiiy, rаsmiy, so`zlаshuv",
+                    "Ilmiy, оmmаbоp, bаdiiy, rаsmiy, kitоbiy"
+                ],
+                explain: "O'zbek tilida 5 ta asosiy vazifaviy uslub mavjud: so'zlashuv, ilmiy, rasmiy-idoraviy, publitsistik (ommabop) va badiiy uslub.",
+                cat: "uslub"
+            },
+            {
+                id: 73,
+                q: "Rasmiy uslubga xos gapni toping.",
+                answer: "Yig’ilish qaror qiladi",
+                options: [
+                    "Yig’ilish qaror qiladi",
+                    "Shovulladi tun bo’yi shamol. ",
+                    "Miltiraydi ko‘kda bir yulduz ",
+                    "Aqlliga aytdim, angladi, bildi"
+                ],
+                explain: "'Yig'ilish qaror qiladi' jumlasi qat'iy va standartlashgan rasmiy bayonnomalarga xos tildir.",
+                cat: "uslub"
+            },
+            {
+                id: 74,
+                q: "Qaysi tinish belgisi rasmiy uslubda qo’llanmaydi?",
+                answer: "Undov",
+                options: ["Nuqta", "Vergul", "Undov", "Ikki nuqta"],
+                explain: "Undov belgisi kuchli his-tuyg'ularni ifodalaydi. Hujjatlarda his-tuyg'ular bo'lmaganligi sababli undov belgisi qo'llanilmaydi.",
+                cat: "uslub"
+            },
+            {
+                id: 75,
+                q: "Matn qismlari qaysi tinish belgisi orqali belgilanishi mumkin?",
+                answer: "tire",
+                options: ["tire", "ikki nuqta", "qo’shtirnoq", "ko’p nuqta"],
+                explain: "Hujjatlar yoki darsliklarda abzas yoki sanaladigan bandlar tire (-) belgisi yordamida ajratiladi.",
+                cat: "imlo"
+            },
+            {
+                id: 76,
+                q: "Tаvsiyanоmа qаndаy hujjаt?",
+                answer: "shахsni mа’lum lаvоzimgа yоki tаshkilоtgа а’zо bo`lishgа tаvsiya etish mаqsаdidа tuzilаdigаn hujjаt",
+                options: [
+                    "qоnun yоki bоshqа hujjаtlаrni tushuntirish mаqsаdidа yоzilаdigаn hujjаt",
+                    "birоr tаklif yоki shikоyat mаzmunidаgi hujjаt",
+                    "vоqеа yоki hоlаtni ахbоrоt mаzmunidа ifоdаlаydigаn hujjаt",
+                    "shахsni mа’lum lаvоzimgа yоki tаshkilоtgа а’zо bo`lishgа tаvsiya etish mаqsаdidа tuzilаdigаn hujjаt"
+                ],
+                explain: "Tavsiyanoma xodim yoki nomzodni yangi ish yoki lavozimga ijobiy tavsif bilan taklif etish hujjatidir.",
+                cat: "hujjat"
+            },
+            {
+                id: 77,
+                q: "Qаysi qаtоrdа  “хаrаktеristikа” so`zining to`g`ri tаrjimаsi bеrilgаn?",
+                answer: "tаvsifnоmа",
+                options: ["tаvsifnоmа", "tаbriknоmа", "tаvsiyanоmа", "mа’lumоtnоmа"],
+                explain: "Rus tilidagi 'xarakteristika' so'zining o'zbekcha muqobili 'tavsifnoma' hisoblanadi.",
+                cat: "hujjat"
+            },
+            {
+                id: 78,
+                q: "«Rаpоrt» so`zining o`zbеkchа muqоbili...",
+                answer: "bildirishnоmа",
+                options: ["аrizа", "dаlоlаtnоmа", "bildirishnоmа", "mа’lumоtnоmа"],
+                explain: "Harbiy yoki idoraviy munosabatlarda qo'llaniladigan 'raport' o'zbek tilida 'bildirishnoma' deyiladi.",
+                cat: "hujjat"
+            },
+            {
+                id: 79,
+                q: "Qo’shimchalarning o‘z o’rnida qo’llanishi nutqning qaysi fazilatini ta’minlaydi?",
+                answer: "To’g’rilik",
+                options: ["Tozalik", "Aniqlik", "Ta’sirchanlik", "To’g’rilik"],
+                explain: "Grammatik shakllarning qat'iy adabiy qoidalar bo'yicha qo'llanishi nutqning to'g'riligi fazilatidir.",
+                cat: "uslub"
+            },
+            {
+                id: 80,
+                q: "Qovunning urug’i, piyozning po’sti  birikmalarida nima anglashiladi?",
+                answer: "butunning bo‘lagi",
+                options: ["butunning bo‘lagi", "narsaning o‘ziga xosligi", "narsaning xossasi", "harakatning vaqtga munosabati"],
+                explain: "Bu birikmalarda qaratqichli munosabat orqali butunning tarkibiy bir qismi (bo'lagi) ifodalangan.",
+                cat: "uslub"
+            },
+            {
+                id: 81,
+                q: "Qаysi qаtоrdаgi gаpdа tinish bеlgilаrigа оid хаtоgа yo`l qo`yilgаn?",
+                answer: "Gul - tikansiz bo‘lmas.",
+                options: ["Kitоb - bilim mаnbаyi.", "Sаmаrqаnd qаdimiy shаhаrdir.", "Gul - tikansiz bo‘lmas.", "Ishni o`z vаqtidа bаjаrish kеrаk."],
+                explain: "Sifatdosh yoki '-siz' qo'shimchasi bilan tugagan kesimlar oldidan ega bilan kesim orasiga tire qo'yilmaydi. To'g'risi: 'Gul tikansiz bo'lmas'.",
+                cat: "imlo"
+            },
+            {
+                id: 82,
+                q: "Buyruq-istаk mаylidаgi fе’llаrni tоping",
+                answer: "gаpirsin, o`tiring, jаvоb bеr",
+                options: [
+                    "gаpirsin, o`tiring, jаvоb bеr",
+                    "bаjаrsаm, yоzmаdi, o`qimаdilаr",
+                    "tug`ilgаn,shug`ullаnаmiz,eshitmаdim",
+                    "sоtib оldi, хursаnd bo`ldi"
+                ],
+                explain: "Buyruq berish yoki xohishni bildiruvchi 'gapirsin', 'o'tiring', 'javob ber' fe'llari buyruq-istak maylidagi fe'llardir.",
+                cat: "uslub"
+            },
+            {
+                id: 83,
+                q: "Narsa, hodisalar  o’rtasidagi aloqadorlikka asoslangan ma’no ko’chirilishi bu - ",
+                answer: "metanimiya",
+                options: ["metafora", "sinekdoxa", "metanimiya", "vazifadoshlik"],
+                explain: "Narsalar o'rtasidagi mantiqiy yaqinlik yoki aloqadorlik (M: 'auditoriya qarsak chaldi') asosida ma'no ko'chishi metonimiya (metanimiya) deyiladi.",
+                cat: "uslub"
+            },
+            {
+                id: 84,
+                q: "Frazeologik sinonimlar berilgan qatorni toping.",
+                answer: "Ilonning yog’ini yalagan, pixi qayrilgan",
+                options: [
+                    "Ilonning yog’ini yalagan, pixi qayrilgan",
+                    "Tilshunoslik, lingvistika",
+                    "Xamirdan qil sug’irganday, oson.",
+                    "Kuldi, iljaydi"
+                ],
+                explain: "Ibora ko'rinishidagi sinonimlar frazeologik sinonimlardir: 'ilonning yog'ini yalagan' va 'pixi qayrilgan' o'ta ayyor kishiga nisbatan aytiladi.",
+                cat: "uslub"
+            },
+            {
+                id: 85,
+                q: "Quyidagi hujjat turlaridan qaysi biri hajman qisqaroq?",
+                answer: "tilxat",
+                options: ["tilxat", "hisobot", "bayonnoma", "dallatnoma"],
+                explain: "Tilxat bir necha qatordan iborat bo'lib, o'zaro shaxsiy munosabatlarda juda tezkor va qisqa rasmiylashtiriladi.",
+                cat: "hujjat"
+            },
+            {
+                id: 86,
+                q: "«Kovushini to’g’irlab qo’ymoq» iborasining lug’aviy ma’nosi?",
+                answer: "haydab yubormoq",
+                options: ["qo’rqmoq", "imkoniyatga katta baho bermoq", "haydab yubormoq", "gangimoq"],
+                explain: "Xalq tilidagi ushbu ibora ishdan bo'shatish yoki uydan haydash, yo'qotish ma'nolarida qo'llaniladi.",
+                cat: "uslub"
+            },
+            {
+                id: 87,
+                q: "Aniqlovchi - ikkinchi darajali bo’lakdir. Ushbu jumla qaysi uslubga xos?",
+                answer: "Ilmiy",
+                options: ["Publisistik", "Rasmiy", "Badiiy", "Ilmiy"],
+                explain: "Grammatika, qoidalar va ta'riflar aks etgan ushbu jumla sof ilmiy-metodik uslubga tegishli.",
+                cat: "uslub"
+            },
+            {
+                id: 88,
+                q: "Qaysi gap tarkibida vulgarizmlar qo’llanganini aniqlang.",
+                answer: "Beting qursin!",
+                options: [
+                    "Beting qursin!",
+                    "Takabburlik insondagi eng xunuk illatdir.",
+                    "Mana shu zayavleniyaga podpis qo’yib berarkansiz",
+                    "Voobshe gapirma manga."
+                ],
+                explain: "Vulgarizmlar - haqoratli, haqiqiy adabiy til me'yoriga kirmaydigan qo'pol so'zlardir (M: 'Beting qursin').",
+                cat: "uslub"
+            },
+            {
+                id: 89,
+                q: "Nutqning aniqligi, dalil va ma’lumotlarga boyligi, qisqa va lo’nda ifodalanilishi, ta’rif va qoidalarining keng qo’llanishi qaysi uslub uchun xos?",
+                answer: "Ilmiy uslub",
+                options: ["Rasmiy ish qog’ozlari uslubi", "Ilmiy uslub", "Badiiy uslub", "Ommabop uslub"],
+                explain: "Mantiqiy izchillik, qonun-qoidalar, ta'riflar va aniqlik ilmiy uslubning bosh xususiyatlaridir.",
+                cat: "uslub"
+            },
+            {
+                id: 90,
+                q: "Qaysi gap tarkibidagi so‘zlarning yozilishida imloviy me’yor buzilgan?",
+                answer: "Sizda o’tkazilgan anjumandan yaxshi tassurotlar qoldimi?",
+                options: [
+                    "Nutq ko’pqirrali xususiyatga egadir",
+                    "Oddiy so‘zlashuv nutqining til bazasini adabiy til tashkil etmaydi",
+                    "Sizda o’tkazilgan anjumandan yaxshi tassurotlar qoldimi?",
+                    "Bugunoq ishga kirishing"
+                ],
+                explain: "Ushbu gapda 'tassurotlar' so'zi noto'g'ri yozilgan. To'g'ri yozilishi 'taassurotlar' (ikki a undoshi bilan) shaklida bo'ladi.",
+                cat: "imlo"
+            },
+            {
+                id: 91,
+                q: "Qaysi gap tarkibida varvarizmlar qo’llangan?",
+                answer: "Men voobshe qo’rqqanim yo’q.",
+                options: [
+                    "Men voobshe qo’rqqanim yo’q.",
+                    "Yoshulli saning qizing bunda gatirilmagan (Mirmuhsin) ",
+                    "Sut ko’r qilgur haromi Gitler oqpadar farzandning qadrini qayerdan bilsin?",
+                    "Ayrim kishilar demak, xo’sh kabi so‘zlarni qaytaraverishga o’rganib qolganlar"
+                ],
+                explain: "O'zbek tilida adabiy muqobili bo'la turib, rus yoki boshqa tillardan keraksiz so'zlarni qo'shish varvarizm deyiladi (M: 'voobshe').",
+                cat: "uslub"
+            },
+            {
+                id: 92,
+                q: "Quyidagi mutafakkirlardan qaysi biri Sharqdan emas?",
+                answer: "Arastu",
+                options: ["Navoiy", "Arastu", "Farobiy", "Kaykovus"],
+                explain: "Arastu (Aristotel) qadimgi Yunoniston (G'arb) faylasufi bo'lib, o'rta asr Sharq olimlariga kuchli ta'sir ko'rsatgan.",
+                cat: "uslub"
+            },
+            {
+                id: 93,
+                q: "Sihat tilasang, kam ye, izzat tilasang, kam de hikmatli ifodasida nutq odobining qaysi ko’rinishi haqida gap boradi?",
+                answer: "Oz so‘zlash",
+                options: ["O’rinli so‘zlash", " Tinglay bilish", "O’ylab gapirish", "Oz so‘zlash"],
+                explain: "'Kam de' - nutqda tejamkor bo'lish, ortiqcha so'zlamaslik, ya'ni oz so'zlash madaniyatini ifodalaydi.",
+                cat: "uslub"
+            },
+            {
+                id: 94,
+                q: "Nutq uslublarini o’rganuvchi soha qanday nomlanadi?",
+                answer: "Uslubshunoslik (stilistika)",
+                options: ["Ruhshunoslik ", "Pedagogika ", "Uslubshunoslik (stilistika)", "Filosofiya "],
+                explain: "Nutq uslublari va ularning o'ziga xos til xususiyatlarini tilshunoslikning 'Stilistika' yoki 'Uslubshunoslik' bo'limi o'rganadi.",
+                cat: "uslub"
+            },
+            {
+                id: 95,
+                q: "Davrning ijtimoiy-siyosiy dolzarb masalalarini jo’shqinlik bilan aks ettiruvchi uslub qanday uslub sanaladi?",
+                answer: "Publitsistik uslub",
+                options: ["Publitsistik uslub", "Ilmiy uslub", "Rasmiyidoraviy uslub", "Badiiy uslub"],
+                explain: "Jamiyat hayoti, yangiliklar va siyosatni ommabop shaklda, hissiyot va jo'shqinlik bilan yetkazadigan uslub publitsistik uslubdir.",
+                cat: "uslub"
+            },
+            {
+                id: 96,
+                q: "Qo’liga uzuk taqdi. Ushbu gapdagi ma’no ko’chish yo’lini izohlang.",
+                answer: "Sinekdoxa",
+                options: ["Metafora", "Sinekdoxa", "Metanimiya", "Vazifadoshlik"],
+                explain: "Uzuk butun qo'lga emas, balki barmoqqa taqiladi. Butun o'rnida qism qo'llanganligi uchun bu sinekdoxa (sinekdoxa) hisoblanadi.",
+                cat: "uslub"
+            },
+            {
+                id: 97,
+                q: "Uslubiy xoslangan so‘zni toping.",
+                answer: "Tirriq",
+                options: ["Tirriq", "Yomon", "Xunuk", "Didsiz"],
+                explain: "'Tirriq' so'zi neytral bo'lmay, so'zlashuv uslubiga xos bo'yoqdorlik va uslubiy xususiyatga ega so'zdir.",
+                cat: "uslub"
+            },
+            {
+                id: 98,
+                q: "Qanday so’zlar rasmiy hujjatlarda ishlatilmaydi?",
+                answer: "hissiy bo’yoqdor so’zlar",
+                options: ["otlar", "fe’llar", "hissiy bo’yoqdor so’zlar", "to’g’ri ma’noli"],
+                explain: "Hissiy bo'yoqdor, tasviriy va badiiy so'zlar rasmiy hujjatlarning xolislik hamda aniqlik talablariga zid keladi.",
+                cat: "hujjat"
+            },
+            {
+                id: 99,
+                q: "Mаjhul nisbаtdаgi fе’l qаtnаshgаn gаpni аniqlаng",
+                answer: "Yangi reja tuzildi",
+                options: ["Yangi reja tuzildi", "Ayol hech narsa demadi", "Kuz yomg’iri yoqimli shivirlardi", "Bu gapdan u zavqlandi"],
+                explain: "Ish-harakatning bajaruvchisi noma'lum bo'lib, '-ildi' qo'shimchasi orqali shakllangan 'Yangi reja tuzildi' gapi majhul nisbatdadir.",
+                cat: "uslub"
+            },
+            {
+                id: 100,
+                q: "Ma’lum rejalashtirilgan ish yakunlanganda qaysi hujjat yoziladi?",
+                answer: "hisobot",
+                options: ["shartnoma", "hisobot", "tushuntirish xati", "ariza"],
+                explain: "Rejalashtirilgan yoki bajarilgan har qanday amaliy ish yakunida natijalarni rasmiylashtirish uchun hisobot (otchyot) yoziladi.",
+                cat: "hujjat"
+            }
+        ];
+
+        // Global Application States
+        let shuffledQuestions = [];
+        let activeQuestions = [];
+        let currentIndex = 0;
+        let quizMode = 'study'; // 'study' or 'exam'
+        let examTimerInterval = null;
+        let examSecondsLeft = 3600; // 60 minutes
+        let examAnswers = {}; // { qId: selectedOption }
+        let studyResults = {}; // { qId: { correct: boolean, selectedOption: string } }
+        let bookmarkedQuestionIds = [];
+
+        // Safe LocalStorage Retrieval
+        try {
+            bookmarkedQuestionIds = JSON.parse(localStorage.getItem('bookmarked_lit_questions') || '[]');
+        } catch (e) {
+            bookmarkedQuestionIds = [];
+        }
+
+        // Shuffling array
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // Initialize Options to be random per question
+        function initializeQuestions() {
+            shuffledQuestions = rawQuestionsData.map(q => {
+                const shuffledOpts = shuffleArray([...q.options]);
+                return {
+                    ...q,
+                    options: shuffledOpts
+                };
+            });
+        }
+
+        function loadStateFromLocalStorage() {
+            try {
+                const savedStudyResults = localStorage.getItem('lit_study_results');
+                if (savedStudyResults) {
+                    studyResults = JSON.parse(savedStudyResults);
+                }
+            } catch (e) {
+                studyResults = {};
+            }
+        }
+
+        function saveStateToLocalStorage() {
+            try {
+                localStorage.setItem('lit_study_results', JSON.stringify(studyResults));
+                localStorage.setItem('bookmarked_lit_questions', JSON.stringify(bookmarkedQuestionIds));
+            } catch (e) {
+                // Ignore silently
+            }
+        }
+
+        // Shuffle current set
+        function shuffleCurrentQuestions() {
+            shuffledQuestions = shuffleArray(shuffledQuestions);
+            shuffledQuestions.forEach(q => {
+                q.options = shuffleArray([...q.options]);
+            });
+            currentIndex = 0;
+            filterQuestions();
+        }
+
+        // Mode Switching
+        function changeQuizMode(mode) {
+            quizMode = mode;
+            const studyBtn = document.getElementById('modeStudyBtn');
+            const examBtn = document.getElementById('modeExamBtn');
+            const timerContainer = document.getElementById('examTimerContainer');
+            const examSubmitBtn = document.getElementById('examSubmitBtn');
+
+            if (mode === 'study') {
+                studyBtn.className = "flex-1 py-2 text-xs font-black rounded-xl transition-all duration-300 bg-white dark:bg-slate-800 text-slate-800 dark:text-white shadow-[0_2px_8px_rgba(0,0,0,0.05)]";
+                examBtn.className = "flex-1 py-2 text-xs font-bold rounded-xl transition-all duration-300 text-slate-500 dark:text-slate-400";
+                timerContainer.classList.add('hidden');
+                examSubmitBtn.classList.add('hidden');
+                clearInterval(examTimerInterval);
+            } else {
+                examBtn.className = "flex-1 py-2 text-xs font-black rounded-xl transition-all duration-300 bg-white dark:bg-slate-800 text-slate-800 dark:text-white shadow-[0_2px_8px_rgba(0,0,0,0.05)]";
+                studyBtn.className = "flex-1 py-2 text-xs font-bold rounded-xl transition-all duration-300 text-slate-500 dark:text-slate-400";
+                timerContainer.classList.remove('hidden');
+                examSubmitBtn.classList.remove('hidden');
+                startExamTimer();
+            }
+            renderQuiz();
+            renderQuestionMap();
+        }
+
+        function startExamTimer() {
+            clearInterval(examTimerInterval);
+            examSecondsLeft = 3600; // Reset to 60 minutes
+            updateTimerDisplay();
+            examTimerInterval = setInterval(() => {
+                examSecondsLeft--;
+                updateTimerDisplay();
+                if (examSecondsLeft <= 0) {
+                    clearInterval(examTimerInterval);
+                    finishExam(true);
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(examSecondsLeft / 60);
+            const seconds = examSecondsLeft % 60;
+            document.getElementById('examTimerText').innerText = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // Search & Filtering
+        function filterQuestions() {
+            const filterVal = document.getElementById('categoryFilter').value;
+            const searchVal = document.getElementById('searchInput').value.toLowerCase();
+
+            activeQuestions = shuffledQuestions.filter(q => {
+                const matchesSearch = q.q.toLowerCase().includes(searchVal) || q.answer.toLowerCase().includes(searchVal);
+                
+                if (filterVal === 'all') {
+                    return matchesSearch;
+                } else if (filterVal === 'bookmarked') {
+                    return bookmarkedQuestionIds.includes(q.id) && matchesSearch;
+                } else {
+                    return q.cat === filterVal && matchesSearch;
+                }
+            });
+
+            document.getElementById('filteredCountBadge').innerText = `${activeQuestions.length} / ${rawQuestionsData.length}`;
+            currentIndex = 0;
+            renderQuiz();
+            renderQuestionMap();
+            updateStats();
+        }
+
+        // Render Test Details
+        function renderQuiz() {
+            const container = document.getElementById('optionsListContainer');
+            const explanationCard = document.getElementById('explanationCard');
+            
+            if (activeQuestions.length === 0) {
+                document.getElementById('questionTextDisplay').innerText = "Belgilangan filtrlar bo'yicha savol topilmadi. Filtrlarni tozalab ko'ring.";
+                document.getElementById('questionIndexBadge').innerText = "SAVOL 0";
+                document.getElementById('questionSourceBadge').innerText = "";
+                container.innerHTML = `
+                    <div class="p-6 text-center text-slate-400 dark:text-slate-500 font-bold border border-dashed border-slate-200 dark:border-slate-800 rounded-2xl bg-white/10">
+                        Natija topilmadi.
+                    </div>`;
+                explanationCard.style.display = 'none';
+                return;
+            }
+
+            const current = activeQuestions[currentIndex];
+            
+            // Set Badge Texts
+            document.getElementById('questionIndexBadge').innerText = `SAVOL ${current.id} (${currentIndex + 1} / ${activeQuestions.length})`;
+            
+            let catName = "Orfografiya (Imlo)";
+            if (current.cat === 'hujjat') catName = "Rasmiy Ish Yuritish";
+            if (current.cat === 'uslub') catName = "Vazifaviy Uslublar";
+            document.getElementById('questionSourceBadge').innerText = catName;
+
+            document.getElementById('questionTextDisplay').innerText = current.q;
+
+            // Bookmark status
+            const bookmarkBtn = document.getElementById('bookmarkBtn');
+            if (bookmarkedQuestionIds.includes(current.id)) {
+                bookmarkBtn.className = "w-9 h-9 flex items-center justify-center rounded-xl hover:bg-white/50 dark:hover:bg-slate-800/40 text-amber-500 transition-all active:scale-90";
+            } else {
+                bookmarkBtn.className = "w-9 h-9 flex items-center justify-center rounded-xl hover:bg-white/50 dark:hover:bg-slate-800/40 text-slate-400 dark:text-slate-500 transition-all active:scale-90";
+            }
+
+            container.innerHTML = "";
+            explanationCard.style.display = 'none';
+
+            const studyAns = studyResults[current.id];
+            const examAns = examAnswers[current.id];
+
+            // Renders
+            current.options.forEach((opt, idx) => {
+                let charLabel = 'A';
+                if (idx === 1) charLabel = 'B';
+                if (idx === 2) charLabel = 'D';
+                if (idx === 3) charLabel = 'E';
+                
+                const button = document.createElement('button');
+                button.className = "w-full p-4 rounded-2xl text-left border text-xs sm:text-sm font-bold transition-all flex items-center justify-between gap-3 active:scale-[0.99] glass-card hover:border-slate-400 dark:hover:border-slate-600 text-slate-800 dark:text-slate-200";
+                
+                button.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-slate-200/50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 flex items-center justify-center font-extrabold shrink-0 shadow-sm text-xs border border-white/20">
+                            ${charLabel}
+                        </span>
+                        <span class="leading-snug font-semibold">${opt}</span>
+                    </div>
+                `;
+
+                if (quizMode === 'study') {
+                    if (studyAns) {
+                        button.disabled = true;
+                        if (opt === current.answer) {
+                            button.className = "w-full p-4 rounded-2xl text-left border text-xs sm:text-sm font-bold transition-all flex items-center justify-between gap-3 active:scale-[0.99] border-emerald-500 bg-emerald-500/10 text-emerald-800 dark:text-emerald-300";
+                            button.innerHTML += `<span class="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center text-[10px] shadow"><i class="fa-solid fa-check"></i></span>`;
+                        } else if (opt === studyAns.selectedOption) {
+                            button.className = "w-full p-4 rounded-2xl text-left border text-xs sm:text-sm font-bold transition-all flex items-center justify-between gap-3 active:scale-[0.99] border-rose-500 bg-rose-500/10 text-rose-800 dark:text-rose-300";
+                            button.innerHTML += `<span class="w-5 h-5 rounded-full bg-rose-500 text-white flex items-center justify-center text-[10px] shadow"><i class="fa-solid fa-xmark"></i></span>`;
+                        } else {
+                            button.className = "w-full p-4 rounded-2xl text-left border text-xs sm:text-sm font-bold transition-all flex items-center justify-between gap-3 active:scale-[0.99] border-slate-200/20 dark:border-slate-800/20 opacity-50";
+                        }
+                    } else {
+                        button.onclick = () => selectStudyOption(current.id, opt);
+                    }
+                } else {
+                    // Exam view styles
+                    if (examAns === opt) {
+                        button.className = "w-full p-4 rounded-2xl text-left border text-xs sm:text-sm font-bold transition-all flex items-center justify-between gap-3 active:scale-[0.99] border-amber-500 bg-amber-500/10 text-amber-800 dark:text-amber-300 shadow-sm";
+                        button.innerHTML += `<span class="w-5 h-5 rounded-full bg-amber-500 text-white flex items-center justify-center text-[10px] shadow"><i class="fa-solid fa-check-double"></i></span>`;
+                    }
+                    button.onclick = () => selectExamOption(current.id, opt);
+                }
+
+                container.appendChild(button);
+            });
+
+            if (quizMode === 'study' && studyAns) {
+                explanationCard.style.display = 'flex';
+                document.getElementById('explanationTextDisplay').innerText = current.explain;
+            }
+        }
+
+        // Render Map
+        function renderQuestionMap() {
+            const container = document.getElementById('questionsMapContainer');
+            container.innerHTML = "";
+
+            activeQuestions.forEach((q, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "h-9 rounded-xl font-black text-xs transition-all flex items-center justify-center active:scale-90 shadow-sm";
+                btn.innerText = q.id;
+
+                const isCurrent = idx === currentIndex;
+                const studyAns = studyResults[q.id];
+                const examAns = examAnswers[q.id];
+
+                if (isCurrent) {
+                    btn.classList.add('ring-2', 'ring-indigo-400', 'scale-105', 'z-10');
+                }
+
+                if (quizMode === 'study') {
+                    if (studyAns) {
+                        if (studyAns.correct) {
+                            btn.classList.add('bg-emerald-500', 'text-white', 'hover:bg-emerald-600');
+                        } else {
+                            btn.classList.add('bg-rose-500', 'text-white', 'hover:bg-rose-600');
+                        }
+                    } else {
+                        btn.classList.add('bg-white/45', 'dark:bg-slate-800/30', 'text-slate-700', 'dark:text-slate-300', 'hover:bg-white/70', 'dark:hover:bg-slate-700/60');
+                    }
+                } else {
+                    if (examAns) {
+                        btn.classList.add('bg-amber-500', 'text-white', 'hover:bg-amber-600');
+                    } else {
+                        btn.classList.add('bg-white/45', 'dark:bg-slate-800/30', 'text-slate-700', 'dark:text-slate-300', 'hover:bg-white/70', 'dark:hover:bg-slate-700/60');
+                    }
+                }
+
+                btn.onclick = () => {
+                    currentIndex = idx;
+                    renderQuiz();
+                    renderQuestionMap();
+                }
+
+                container.appendChild(btn);
+            });
+        }
+
+        // Selection Action Handler
+        function selectStudyOption(qId, selectedOpt) {
+            const q = rawQuestionsData.find(item => item.id === qId);
+            const isCorrect = q.answer === selectedOpt;
+            studyResults[qId] = {
+                correct: isCorrect,
+                selectedOption: selectedOpt
+            };
+
+            playQuizSound(isCorrect ? 'correct' : 'wrong');
+            saveStateToLocalStorage();
+            updateStats();
+            renderQuiz();
+            renderQuestionMap();
+        }
+
+        // Exam Mode Option Selector
+        function selectExamOption(qId, selectedOpt) {
+            examAnswers[qId] = selectedOpt;
+            updateStats();
+            renderQuiz();
+            renderQuestionMap();
+        }
+
+        // Metrics calculations
+        function updateStats() {
+            let correct = 0;
+            let wrong = 0;
+            let totalAnswered = 0;
+
+            if (quizMode === 'study') {
+                rawQuestionsData.forEach(q => {
+                    if (studyResults[q.id]) {
+                        totalAnswered++;
+                        if (studyResults[q.id].correct) correct++;
+                        else wrong++;
+                    }
+                });
+            } else {
+                rawQuestionsData.forEach(q => {
+                    if (examAnswers[q.id]) {
+                        totalAnswered++;
+                        if (examAnswers[q.id] === q.answer) correct++;
+                        else wrong++;
+                    }
+                });
+            }
+
+            document.getElementById('correctCountText').innerText = correct;
+            document.getElementById('wrongCountText').innerText = wrong;
+            document.getElementById('answeredRatioText').innerText = `Yechildi: ${totalAnswered} / ${rawQuestionsData.length}`;
+            
+            const percent = totalAnswered > 0 ? Math.round((totalAnswered / rawQuestionsData.length) * 100) : 0;
+            document.getElementById('progressBarPercentage').innerText = `${percent}%`;
+            document.getElementById('progressBarFill').style.width = `${percent}%`;
+
+            document.getElementById('bookmarkCountText').innerText = bookmarkedQuestionIds.length;
+        }
+
+        // Prev & Next navigation
+        function navigateToQuestion(direction) {
+            if (activeQuestions.length === 0) return;
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = activeQuestions.length - 1;
+            if (currentIndex >= activeQuestions.length) currentIndex = 0;
+            renderQuiz();
+            renderQuestionMap();
+        }
+
+        // Toggle bookmarks (Yulduzcha)
+        function toggleBookmarkActiveQuestion() {
+            if (activeQuestions.length === 0) return;
+            const current = activeQuestions[currentIndex];
+            const idxInBookmarks = bookmarkedQuestionIds.indexOf(current.id);
+
+            if (idxInBookmarks > -1) {
+                bookmarkedQuestionIds.splice(idxInBookmarks, 1);
+            } else {
+                bookmarkedQuestionIds.push(current.id);
+            }
+
+            saveStateToLocalStorage();
+            renderQuiz();
+            updateStats();
+        }
+
+        // Clears current state (Tozalash)
+        function resetQuizState() {
+            const confirmReset = confirm("Barcha belgilangan test natijalarini tozalab yuborishni xohlaysizmi?");
+            if (confirmReset) {
+                studyResults = {};
+                examAnswers = {};
+                try {
+                    localStorage.removeItem('lit_study_results');
+                } catch (e) {}
+                updateStats();
+                renderQuiz();
+                renderQuestionMap();
+            }
+        }
+
+        // Finish exam prompt inside modal dialog
+        function finishExamPrompt() {
+            const answeredCount = Object.keys(examAnswers).length;
+            const confirmed = confirm(`Jami 100 ta savoldan ${answeredCount} tasiga javob berdingiz. Imtihonni topshirishni tasdiqlaysizmi?`);
+            if (confirmed) {
+                finishExam();
+            }
+        }
+
+        function finishExam() {
+            clearInterval(examTimerInterval);
+            
+            let correct = 0;
+            let wrong = 0;
+            rawQuestionsData.forEach(q => {
+                const ans = examAnswers[q.id];
+                if (ans) {
+                    if (ans === q.answer) correct++;
+                    else wrong++;
+                }
+            });
+
+            const total = rawQuestionsData.length;
+            const percent = Math.round((correct / total) * 100);
+
+            // Populate Modal values
+            document.getElementById('modalTotalAnswered').innerText = Object.keys(examAnswers).length;
+            document.getElementById('modalCorrect').innerText = correct;
+            document.getElementById('modalIncorrect').innerText = wrong;
+            document.getElementById('modalPercentText').innerText = `To'g'ri ko'rsatkich: ${percent}%`;
+            document.getElementById('modalPercentBar').style.width = `${percent}%`;
+
+            let gradingText = "";
+            if (percent >= 86) {
+                gradingText = "A'LO! O'zbek tili va ish yuritish (hujjatchilik) madaniyatidan testni juda yuqori natija bilan topshirdingiz. Tabriklaymiz!";
+            } else if (percent >= 71) {
+                gradingText = "YAXSHI. Savollarning katta qismiga mantiqiy va to'g'ri javob berdingiz. Imlo normalari va hujjatlar bilan ishlash ko'nikmangiz yaxshi shakllangan.";
+            } else if (percent >= 55) {
+                gradingText = "QONIQLARLI. O'tish chegarasidan muvaffaqiyatli o'tdingiz. Lekin imlo va idoraviy ish yuritish qoidalarini yana takrorlashingiz kerak.";
+            } else {
+                gradingText = "QONIQARSIZ. Afsuski, yetarli natija qayd etilmadi. O'rganish rejimiga qaytib, tushuntirish va darslik izohlari ustida mukammal qayta ishlang.";
+            }
+            document.getElementById('modalGradeText').innerText = gradingText;
+
+            // Show results modal
+            document.getElementById('examResultModal').classList.remove('hidden');
+        }
+
+        function reviewExamAnswers() {
+            rawQuestionsData.forEach(q => {
+                const ans = examAnswers[q.id];
+                if (ans) {
+                    studyResults[q.id] = {
+                        correct: ans === q.answer,
+                        selectedOption: ans
+                    };
+                }
+            });
+            saveStateToLocalStorage();
+            document.getElementById('examResultModal').classList.add('hidden');
+            changeQuizMode('study');
+        }
+
+        function closeModalAndReset() {
+            document.getElementById('examResultModal').classList.add('hidden');
+            studyResults = {};
+            examAnswers = {};
+            try {
+                localStorage.removeItem('lit_study_results');
+            } catch (e) {}
+            changeQuizMode('study');
+        }
+
+        // Theme management - Default to light mode
+        function toggleTheme() {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                try {
+                    localStorage.setItem('theme', 'light');
+                } catch (e) {}
+            } else {
+                html.classList.add('dark');
+                try {
+                    localStorage.setItem('theme', 'dark');
+                } catch (e) {}
+            }
+            updateThemeToggleButton();
+        }
+
+        function updateThemeToggleButton() {
+            const html = document.documentElement;
+            const icon = document.getElementById('themeIcon');
+            if (html.classList.contains('dark')) {
+                icon.className = "fa-solid fa-sun text-amber-400";
+            } else {
+                icon.className = "fa-solid fa-moon text-slate-700";
+            }
+        }
+
+        // Web Audio API Synthesizer
+        let audioCtx = null;
+        function playQuizSound(type) {
+            try {
+                if (!audioCtx) {
+                    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                    if (AudioContextClass) {
+                        audioCtx = new AudioContextClass();
+                    }
+                }
+                if (!audioCtx) return;
+
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                if (type === 'correct') {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(523.25, audioCtx.currentTime); // C5
+                    osc.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.08); // E5
+                    osc.frequency.setValueAtTime(783.99, audioCtx.currentTime + 0.16); // G5
+                    gain.gain.setValueAtTime(0.06, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.005, audioCtx.currentTime + 0.35);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.35);
+                } else if (type === 'wrong') {
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(196.00, audioCtx.currentTime); // G3
+                    osc.frequency.setValueAtTime(146.83, audioCtx.currentTime + 0.12); // D3
+                    gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.005, audioCtx.currentTime + 0.45);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.45);
+                }
+            } catch (err) {
+                // Ignore silently
+            }
+        }
+
+        // Whiteboard Logic
+        let canvas = null;
+        let ctx = null;
+        let isDrawing = false;
+        let drawColor = '#6366f1';
+        let brushSize = 3;
+
+        function initScratchpad() {
+            canvas = document.getElementById('scratchpadCanvas');
+            ctx = canvas.getContext('2d');
+            
+            // Set scale size
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            // Desktop events
+            canvas.addEventListener('mousedown', startDrawing);
+            canvas.addEventListener('mousemove', draw);
+            canvas.addEventListener('mouseup', stopDrawing);
+            canvas.addEventListener('mouseout', stopDrawing);
+
+            // Mobile events
+            canvas.addEventListener('touchstart', startDrawingMobile, { passive: false });
+            canvas.addEventListener('touchmove', drawMobile, { passive: false });
+            canvas.addEventListener('touchend', stopDrawing);
+
+            document.getElementById('brushSizeSlider').addEventListener('input', function(e) {
+                brushSize = e.target.value;
+            });
+        }
+
+        function resizeCanvas() {
+            const rect = canvas.parentNode.getBoundingClientRect();
+            canvas.width = rect.width;
+            canvas.height = rect.height;
+            clearScratchpadSilently();
+        }
+
+        function startDrawing(e) {
+            isDrawing = true;
+            document.getElementById('scratchpadHint').classList.add('hidden');
+            ctx.beginPath();
+            ctx.moveTo(e.offsetX, e.offsetY);
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+            ctx.lineWidth = brushSize;
+            ctx.lineCap = 'round';
+            ctx.strokeStyle = drawColor;
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+        }
+
+        function startDrawingMobile(e) {
+            e.preventDefault();
+            isDrawing = true;
+            document.getElementById('scratchpadHint').classList.add('hidden');
+            const rect = canvas.getBoundingClientRect();
+            const touch = e.touches[0];
+            ctx.beginPath();
+            ctx.moveTo(touch.clientX - rect.left, touch.clientY - rect.top);
+        }
+
+        function drawMobile(e) {
+            if (!isDrawing) return;
+            e.preventDefault();
+            const rect = canvas.getBoundingClientRect();
+            const touch = e.touches[0];
+            ctx.lineWidth = brushSize;
+            ctx.lineCap = 'round';
+            ctx.strokeStyle = drawColor;
+            ctx.lineTo(touch.clientX - rect.left, touch.clientY - rect.top);
+            ctx.stroke();
+        }
+
+        function stopDrawing() {
+            isDrawing = false;
+            ctx.closePath();
+        }
+
+        function clearScratchpad() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            document.getElementById('scratchpadHint').classList.remove('hidden');
+        }
+
+        function clearScratchpadSilently() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function setScratchpadColor(color) {
+            const isDark = document.documentElement.classList.contains('dark');
+            if (color === 'eraser') {
+                drawColor = isDark ? '#090d16' : '#ffffff';
+                document.getElementById('eraseColorBtn').classList.add('bg-indigo-200');
+            } else {
+                drawColor = color;
+                document.getElementById('eraseColorBtn').classList.remove('bg-indigo-200');
+            }
+        }
+
+        // Initial Theme Configuration
+        try {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        } catch (e) {
+            document.documentElement.classList.remove('dark');
+        }
+
+        window.onload = function() {
+            updateThemeToggleButton();
+            loadStateFromLocalStorage();
+            initializeQuestions();
+            filterQuestions(); 
+            initScratchpad();
+        }
+    </script>
+</body>
+</html>
+
+```
